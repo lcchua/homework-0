@@ -51,6 +51,4 @@ D - It does not make a data center more efficient.
 _Q10: A virtualized server uses less energy than a non-virtualized server._
 A - True
 **B - False**
-> The answer is False if it is based upon the premise that a virtualized server havng to run many applications in multiple VMs 
-> vis-a-vis a non-virtualized server only running a single application at any one time. However the answer is True if it based upon 
-> energy efficiency hence lower energy cost as a virtualzied server can run many application instances in multiple VMs.
+> Running multiple application processes in a non-virtualized server usually consumes less energy than running multiple application VMs in a virtualized server. This is due to reduced overhead and more efficient resource utilization in the non-virtualized environment.
