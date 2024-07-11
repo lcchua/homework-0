@@ -2,30 +2,30 @@ _Q1: Clustering refers to servers collaboration on a single system to improve st
 **A - True**<br>
 B - False<br>
 
-_Q2: Which is the most often used clusters?_
-A - File Server
-B - Print Server
-C - Database / Message Server
-**D - All of the above**
+_Q2: Which is the most often used clusters?_<br>
+A - File Server<br>
+B - Print Server<br>
+C - Database / Message Server<br>
+**D - All of the above**<br>
 
-_Q3: Which of the following options below does clustering servers NOT provide customers with a higher level of as compared to running a single-server application?
-**A - Security**
-B - Availability
-C - Scalability
-D - Dependability
+_Q3: Which of the following options below does clustering servers NOT provide customers with a higher level of as compared to running a single-server application?<br>
+**A - Security**<br>
+B - Availability<br>
+C - Scalability<br>
+D - Dependability<br>
 
-_Q4: Server clustering helps to solve and overcome_
-A - Service Failure
-B - Hardware Failure
-C - Site Failure
-**D - All of the above**
+_Q4: Server clustering helps to solve and overcome_<br>
+A - Service Failure<br>
+B - Hardware Failure<br>
+C - Site Failure<br>
+**D - All of the above**<br>
 
-_Q5: Which load balancer operates at both individual request level (Layer 7) and connection level (Layer 4) only?_
-**A - Application Load Balancers**
-B - Network Load Balancers
-C - Storage Load Balancers
-D - Firewall Load Balancers
-> Above question 5 answer to be confirmed.
+_Q5: Which load balancer operates at both individual request level (Layer 7) and connection level (Layer 4) only?_<br>
+**A - Application Load Balancers**<br>
+B - Network Load Balancers<br>
+C - Storage Load Balancers<br>
+D - Firewall Load Balancers<br>
+> Above question 5 answer to be confirmed.<br>
 
 _Q6: A load balancer performs the following functions, except?_
 A - Distributes client requests or network load efficiently across multiple servers
