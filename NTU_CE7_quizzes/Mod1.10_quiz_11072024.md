@@ -27,30 +27,30 @@ C - Storage Load Balancers<br>
 D - Firewall Load Balancers<br>
 > Above question 5 answer to be confirmed.<br>
 
-_Q6: A load balancer performs the following functions, except?_
-A - Distributes client requests or network load efficiently across multiple servers
-B - Ensures high availability and reliability by sending requests only to servers that are online
-**C - Usefulness is severely constrained by the absence of failover**
-D - Provides the flexibility to add or subtract servers as demand dictates
+_Q6: A load balancer performs the following functions, except?_<br>
+A - Distributes client requests or network load efficiently across multiple servers<br>
+B - Ensures high availability and reliability by sending requests only to servers that are online<br>
+**C - Usefulness is severely constrained by the absence of failover**<br>
+D - Provides the flexibility to add or subtract servers as demand dictates<br>
 
-_Q7: Benefits of Load Balancing_
-A - Reduced downtime
-B - Scalable
-C - Redundancy
-**D - All of the above**
+_Q7: Benefits of Load Balancing_<br>
+A - Reduced downtime<br>
+B - Scalable<br>
+C - Redundancy<br>
+**D - All of the above**<br>
 
-_Q8: These statement explain about Blacklisting, except?_
-A - Blacklisting involves blocking access to suspicious or malicious entities.
-B - The default is to allow access.
-**C - The default is to block access.**
-D - Blacklisting is threat-centric.
+_Q8: These statement explain about Blacklisting, except?_<br>
+A - Blacklisting involves blocking access to suspicious or malicious entities.<br>
+B - The default is to allow access.<br>
+**C - The default is to block access.**<br>
+D - Blacklisting is threat-centric.<br>
 
-_Q9: These statement explain about Whitelisting, except?_
-A - Whitelisting involves only allowing access for approved entities.
-B - The default is to block access.
-C - Whitelisting is trust-centric.
-**D - The default is to allow access.**
+_Q9: These statement explain about Whitelisting, except?_<br>
+A - Whitelisting involves only allowing access for approved entities.<br>
+B - The default is to block access.<br>
+C - Whitelisting is trust-centric.<br>
+**D - The default is to allow access.**<br>
 
-_Q10: Whitelisting and Blacklisting are the same_
+_Q10: Whitelisting and Blacklisting are the same_<br>
 A - True
-**B - False**
+**B - False**<br>
