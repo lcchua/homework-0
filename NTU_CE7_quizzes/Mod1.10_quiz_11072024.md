@@ -25,7 +25,7 @@ _Q5: Which load balancer operates at both individual request level (Layer 7) and
 B - Network Load Balancers
 C - Storage Load Balancers
 D - Firewall Load Balancers
-> Above question answer to be confirmed.
+> Above question 5 answer to be confirmed.
 
 _Q6: A load balancer performs the following functions, except?_
 A - Distributes client requests or network load efficiently across multiple servers
