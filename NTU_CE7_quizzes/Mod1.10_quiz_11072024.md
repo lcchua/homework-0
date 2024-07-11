@@ -1,6 +1,6 @@
-_Q1: Clustering refers to servers collaboration on a single system to improve stability._
-**A - True**
-B - False
+_Q1: Clustering refers to servers collaboration on a single system to improve stability._<br>
+**A - True**<br>
+B - False<br>
 
 _Q2: Which is the most often used clusters?_
 A - File Server
