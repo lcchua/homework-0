@@ -23,9 +23,8 @@ C - Site Failure<br>
 _Q5: Which load balancer operates at both individual request level (Layer 7) and connection level (Layer 4) only?_<br>
 A - Application Load Balancers<br>
 B - Network Load Balancers<br>
-C - Storage Load Balancers<br>
-D - ~~Firewall~~ **Classic Load Balancers**<br>
-> Above question 5 answer to be confirmed.<br>
+**C - Classic Load Balancers**<br>
+D - Classic Load Balancers<br>
 
 _Q6: A load balancer performs the following functions, except?_<br>
 A - Distributes client requests or network load efficiently across multiple servers<br>
