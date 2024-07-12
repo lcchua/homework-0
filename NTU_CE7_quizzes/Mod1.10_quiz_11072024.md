@@ -21,10 +21,10 @@ C - Site Failure<br>
 **D - All of the above**<br>
 
 _Q5: Which load balancer operates at both individual request level (Layer 7) and connection level (Layer 4) only?_<br>
-**A - Application Load Balancers**<br>
+A - Application Load Balancers<br>
 B - Network Load Balancers<br>
 C - Storage Load Balancers<br>
-D - Firewall Load Balancers<br>
+D - ~~Firewall~~ **Classic Load Balancers**<br>
 > Above question 5 answer to be confirmed.<br>
 
 _Q6: A load balancer performs the following functions, except?_<br>
