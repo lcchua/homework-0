@@ -51,5 +51,5 @@ _Q9: An in-place deployment is a deployment strategy that updates the applicatio
 * B: False
 
 **Q10: A rolling deployment is a deployment strategy that slowly replaces previous versions of an application with new versions of an application by completely replacing the infrastructure on which the application is running. True or False?**
-* **A: True**
-* B: False
+* A: True
+* **B: False**
