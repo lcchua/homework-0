@@ -28,11 +28,11 @@ B - docker start
 C - docker execute
 D - docker deploy
 
-_Q6: Can you run Docker containers on AWS?_<br>
-**A - Yes, using EC2 instances**<br>
-B - No, AWS only supports its own container service<br>
-C - Yes, using Elastic Container Service (ECS)?<br>
-D - Yes, using Elastic Beanstalk
+_Q6. Which AWS service is specifically designed to manage and orchestrate Docker containers?_<br>
+A - Amazon S3<br>
+B - AWS Lambda<br>
+**C - Amazon ECS**<br>
+D - AWS CloudTrail
 
 _Q7: What is the main benefit of using AWS ECS for running Docker containers?_<br>
 A - Improved scalability
