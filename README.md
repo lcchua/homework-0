@@ -19,7 +19,6 @@ Repositories:
 ### Solution Architecture
 ![image](https://github.com/user-attachments/assets/3b9dbbff-6ce5-4776-bcd9-6eb3dd928eef)
 
-
 ## Getting Started
 Clone the above-mentioned Git repositories and then follow the following steps of action:
 
@@ -57,4 +56,4 @@ _describe the branch actions for nonprod env if any_
 ## CICD Pipeline
 _describe the pipeline workflow including output samples if any_
 
-## Conclusion
+## In Summary
