@@ -1,18 +1,24 @@
-# NTU CE7 Group 1 Capstone Project Use case Docuemntation
+# NTU CE7 Group 1 Capstone Project Use-Case Documentation
 
 ### Company Profile
+Quantum AI is a Singapore-based tech startup specializing in AI platform engineering for the insurance industry. We are a team of 4 'hardcore' engineers who are responsible for the development and operations of Quantum's cloud AI platform. It offers up-selling and cross-selling predictions for the customers of insurance and bancassurance companies. Each member of this team has specialised tech skills and subject-matter expertise working collectively to ensure the continuous advancement and resilience of the platform.
 
-### Engineering Team
+### 'Hardcore' Engineering Team
+| **Name**                  | **Roles**                           |  **Expertise**                               |
+|---------------------------|-------------------------------------|----------------------------------------------|
+| Stephen Tan               | DevOps/DevSecOps Engineer           | GitHub & CICD Wizard                         |
+| Tan Yuan                  | Cloud & On-Premise Infra Engineer   | Kubernetes & Cloud Master                    |
+| Jun Jie                   | Platform Monitoring Engineer        | Prometheus & Grafana Spymmaster              | 
+| Chua Lai Chwang           | MLOps Engineer & Project Manager    | GitHub Actions Conductor                     |
 
 ### The Project
-
-Project Name: Machine-Learning (ML) DevOps with DevSecOps and SRE Monitoring
+Project Name: **Machine-Learning (ML) DevOps with DevSecOps and SRE Monitoring**
 
 Repositories:
-- CI & Docker Image Registration Pipeline for ML Model Training & Publishing
+- CI & Docker Image Registry Pipeline for ML Model Training & Publishing
   - https://github.com/lcchua/mlops-project.git
 - CI/CD Pipeline for AWS EKS/K8S Clusters Infrastructure & Monitoring Tools
-   - _fill in the repo url_
+  - _fill in the repo url_
 - CD Pipeline for Insurance Buying Prediction Application Deployment & Rollback
   - _fill in the repo url_
  
