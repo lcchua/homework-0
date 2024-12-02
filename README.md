@@ -36,7 +36,7 @@ _remove this section as according_
 _fill in the workkflow pipeline steps to check, install, build and execute_
 _remove this section as according_
 
-### Prometheus & Grafana SRE Montioring Tools
+### Prometheus & Grafana SRE Monitoring Tools
 _fill in the workflow pipeline steps to check, install, build and execute_
 _remove this section as according_
 
