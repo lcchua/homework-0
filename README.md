@@ -11,7 +11,8 @@ Quantum AI is a Singapore-based tech startup specializing in AI platform enginee
 | Jun Jie                   | Platform Monitoring Engineer        | Prometheus & Grafana Spymmaster              | 
 | Chua Lai Chwang           | MLOps Engineer & Project Manager    | GitHub Actions Conductor                     |
 
-### The Project
+
+## The Project
 Project Name: **Machine-Learning (ML) DevOps with DevSecOps and SRE Monitoring**
 
 Repositories:
