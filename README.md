@@ -1,7 +1,7 @@
 # NTU CE7 Group 1 Capstone Project Use-Case Documentation
 
 ### Company Profile
-Quantum AI is a Singapore-based tech startup specializing in AI platform engineering for the insurance industry. We are a team of 4 'hardcore' engineers who are responsible for the development and operations of Quantum's cloud AI platform. It offers up-selling and cross-selling predictions for the customers of insurance and bancassurance companies. Each member of this team has specialised tech skills and subject-matter expertise working collectively to ensure the continuous advancement and resilience of the platform.
+Quantum AI is a Singapore-based tech startup specializing in AI platform engineering for the insurance industry. We are a team of 4 'hardcore' engineers who are responsible for the "development and operations" ("DevOps") of Quantum's cloud AI platform. It offers up-selling and cross-selling predictions for the customers of insurance and bancassurance companies. Each member of this team has specialised tech skills and subject-matter expertise working collectively to ensure the continuous advancement and resilience of the platform.
 
 ### 'Hardcore' Engineering Team
 | **Name**                  | **Roles**                           |  **Expertise**                               |
