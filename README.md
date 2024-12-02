@@ -34,7 +34,7 @@ _remove this section as according_
 _fill in the pipeline steps to check, install, build and execute_
 _remove this section as according_
 
-### Prometheus & Granafa Montioring Tools
+### Prometheus & Grafana SRE Montioring Tools
 _fill in the pipeline steps to check, install, build and execute_
 _remove this section as according_
 
