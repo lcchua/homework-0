@@ -4,7 +4,7 @@
 
 ### Engineering Team
 
-### Project
+### The Project
 
 Project Name: Machine-Learning (ML) DevOps with DevSecOps and SRE Monitoring
 
@@ -56,4 +56,15 @@ _describe the branch actions for nonprod env if any_
 ## CICD Pipeline
 _describe the pipeline workflow including output samples if any_
 
-## In Summary
+## Learning Points
+_add what "little secrets" have been learnt that you like to share with others_ 
+
+## Licensing and Credits
+Credits to the team of authors:
+- Jun Jie
+- Tan Yuan
+- Stephen Tan
+- Chua Lai Chwang
+
+## Additional Resources if any
+
