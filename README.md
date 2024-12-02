@@ -30,7 +30,7 @@ Clone the above-mentioned Git repositories and then follow the following steps o
 _fill in the pipeline steps to check, install, build and execute_
 _remove this section as according_
 
-### AWS EKS/K8S Clustering Infrastructure
+### AWS EKS/Kubernetes Cluster Infrastructure
 _fill in the pipeline steps to check, install, build and execute_
 _remove this section as according_
 
