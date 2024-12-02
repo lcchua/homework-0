@@ -27,19 +27,19 @@ Repositories:
 Clone the above-mentioned Git repositories and then follow the following steps of action:
 
 ### ML Model Training & Publishing
-_fill in the pipeline steps to check, install, build and execute_
+_fill in the workflow pipeline steps to check, install, build and execute_
 _remove this section as according_
 
 ### AWS EKS/Kubernetes Cluster Infrastructure
-_fill in the pipeline steps to check, install, build and execute_
+_fill in the workkflow pipeline steps to check, install, build and execute_
 _remove this section as according_
 
 ### Prometheus & Grafana SRE Montioring Tools
-_fill in the pipeline steps to check, install, build and execute_
+_fill in the workflow pipeline steps to check, install, build and execute_
 _remove this section as according_
 
 ### Insurance Buying Prediction Application Deployment & Rollback
-_fill in the pipeline steps to check, install, build and execute_
+_fill in the workflow pipeline steps to check, install, build and execute_
 _remove this section as according_
 
 ## Dependencies
