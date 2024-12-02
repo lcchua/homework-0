@@ -17,7 +17,7 @@ Project Name: **Machine-Learning (ML) DevOps with DevSecOps and SRE Monitoring**
 Repositories:
 - [CI & Docker Image Registry Pipeline for ML Model Training & Publishing](https://github.com/lcchua/mlops-project)
 - [CI/CD Pipeline for AWS EKS/K8S Clusters Infrastructure & Monitoring Tools](https://github.com/CyuanT/CAP-Stone)
-- [CD Pipeline for Insurance Buying Prediction Application Deployment & Rollback](_fill in the repo url_)
+- CD Pipeline for Insurance Buying Prediction Application Deployment & Rollback as part of the above 2 repos
 
 ### Context and Motivation 
 _describe the project scope of what and why_ 
