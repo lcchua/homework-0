@@ -60,7 +60,7 @@ _describe the branch actions for nonprod env if any_
 ## CICD Pipeline
 _describe the pipeline workflow including output samples if any_
 
-## Learning Points
+## Learning Journey
 _add what "little secrets" have been learnt that you like to share with others_ 
 
 ## Licensing and Credits
