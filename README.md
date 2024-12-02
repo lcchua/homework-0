@@ -13,13 +13,15 @@ Quantum AI is a Singapore-based tech startup specializing in AI platform enginee
 
 
 ## The Project
-Project Name: **Machine-Learning (ML) DevOps with DevSecOps and SRE Monitoring**
-
+Project Name: **Machine-Learning (ML) DevOps with DevSecOps and SRE Monitoring**<br>
 Repositories:
 - [CI & Docker Image Registry Pipeline for ML Model Training & Publishing](https://github.com/lcchua/mlops-project.git)
 - [CI/CD Pipeline for AWS EKS/K8S Clusters Infrastructure & Monitoring Tools](_fill in the repo url_)
 - [CD Pipeline for Insurance Buying Prediction Application Deployment & Rollback](_fill in the repo url_)
- 
+
+### Context and Motivation 
+_describe the project scope of what and why_ 
+
 ### Solution Architecture
 ![image](https://github.com/user-attachments/assets/3b9dbbff-6ce5-4776-bcd9-6eb3dd928eef)
 
