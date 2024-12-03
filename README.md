@@ -49,8 +49,8 @@ It comprises of 3 major domains:
 <br>
 
 ## Getting Started
-First clone the above-mentioned Git repositories and get started with the project as follows:
-
+First clone the above-mentioned Git repositories and get started with the project in the following sections:
+- [ML Model Training and Publishing](docs/getting-started-clc.md)
 ### AWS EKS/Kubernetes Cluster Infrastructure
 _fill in the workkflow pipeline steps to check, install, build and execute_<br>
 _remove this section as according_
