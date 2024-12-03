@@ -62,7 +62,7 @@ After the latest `predict_buy_app` version has successfully completed SIT off th
 |![repo-structure-screenshot1](https://github.com/user-attachments/assets/0abb694f-9581-4e45-ab59-f02d45e77932)|
 ![repo-structure-screenshot2](https://github.com/user-attachments/assets/91e99fee-e5d6-4318-89e8-bb2028ec6c15) |
 #### Branching Strategies
-![Adapted Branching Strategy](https://github.com/user-attachments/assets/0ffa771d-574b-400a-ba0d-20d7fb1ea65e)
+![adapted-branching-strategy](https://github.com/user-attachments/assets/1018e9cf-2851-4797-83fd-63f8cafba03e)
 #### Production Branch
 _describe the branch actions for prod env if any_
 #### Non-Production Branch
