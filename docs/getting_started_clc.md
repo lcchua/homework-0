@@ -77,7 +77,7 @@ Here's an illustration of the workflow summary screens:
 ![promote_app-workflow-summary-screenshot1](https://github.com/user-attachments/assets/ae6c75c7-654b-418f-bfca-74351e59f1ea)
 ![promote_app-workflow-summary-screenshot2](https://github.com/user-attachments/assets/226ac1e9-875f-414a-b036-10ea14dea1be)
 #### 6. Test run the `predict_buy_app` using Postman
-Finally after Steps 5 or 6, you can test the latest-trained ML application via Postman as follows, assuming that the the application has been deployed into the K8S cluster via `kubectl apply` command:
+Finally after Steps 5 or 6, you can test the latest-trained ML application via Postman or `curl` command. This is assuming that the the application has been deployed into the K8S cluster from [Insurance Buying Prediction Application Deployment & Rollback](docs/getting_started_st.md).
 <img width="1431" alt="Screenshot 2024-12-03 at 7 50 58 PM" src="https://github.com/user-attachments/assets/6f8fe669-2475-4de9-8c50-8c19b118b0d2">
 Or alternatively, run the curl command of:
 ```bash
