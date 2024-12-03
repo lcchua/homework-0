@@ -77,32 +77,27 @@ This will trigger the Terraform AWS resources creation of the S3 bucket and ECR 
     - `DVC_Artefacts` folder where the version control metadata of the trained ML models are saved by the [Data Version Control](https://dvc.org/) (DVC) tool that is used in the other workflows.
   ![s3-bucket-screenshot](https://github.com/user-attachments/assets/a8e40738-a771-4785-b5be-cb91eec92aef)
   - ECR private repos of `ce7-grp-1/nonprod/predict_buy_app` and `ce7-grp-1/prod/predict_buy_app`
-  ![ecr-repo-screenshot](https://github.com/user-attachments/assets/6de870bc-1cc3-48d5-a4e3-df1062edbd8b)
+  ![ecr-repos-screenshot](https://github.com/user-attachments/assets/48a4102c-8405-4d10-99cf-6de3ec05dd56)
 Now that the AWS resources for ML model Training and Publishing are created, we can then proceed with the Data Prep Stage of the ML Pipeline.
 #### 2. Preparing the ML training and testing datasets
 Upload the `train.csv` and `'test.csv` files  into the S3 bucket.
 ![new-datasets-s3-bucket-screenshot](https://github.com/user-attachments/assets/a5da19c2-235a-48d6-a2c7-e22f3eec636e)
-[ml-datasets.zip](https://github.com/user-attachments/files/17989198/ml-datasets.zip)
+Example datasets to unzip-then-upload: [ml-datasets.zip](https://github.com/user-attachments/files/17989198/ml-datasets.zip)
+#### 3. Train the Model using Python with Scikit-Learn
 
-#### 3. Data Preparation
+#### 4. Build the ML Application using FastAPI
 
-#### 4. Train the Model
+#### 5. Promote the Application Docker Image from nonprod to prod ECR private registeries
 
-#### 5. FastAPI
+#### 6. Test run the `predict_buy_app` using Postman
 
-#### 6. Docker
-
-#### 7. Push the Model to a Docker Image registry
-```
-......
-```
 #### Dependencies
-_fill in the dependencies if any_
 ![MLOps CICD Plan](https://github.com/user-attachments/assets/bd768c7e-b205-4e3d-8f6f-431a1ec079d7)
 #### Application or Repo Structure
-_describe the application or repo structure if any_
+|![repo-structure-screenshot1](https://github.com/user-attachments/assets/0abb694f-9581-4e45-ab59-f02d45e77932)|
+![repo-structure-screenshot2](https://github.com/user-attachments/assets/91e99fee-e5d6-4318-89e8-bb2028ec6c15) |
+
 #### Branching Strategies
-_describe the branching strategy if any_
 ![Adapted Branching Strategy](https://github.com/user-attachments/assets/0ffa771d-574b-400a-ba0d-20d7fb1ea65e)
 #### Production Branch
 _describe the branch actions for prod env if any_
