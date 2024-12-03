@@ -52,7 +52,8 @@ After the Docker image is built, it is tagged with the next release version numb
 ![github-rel-tagging-screenshot2](https://github.com/user-attachments/assets/2e004865-7d54-411f-bdb3-eaf58af63933)
 Here's a screenshot of the regustry repo `ce7-grp-1/nonprod/predict_buy_app` where all the `predict_buy_app` Docker images are pushed to: 
 ![ecr-nonprod-repo-screenshot](https://github.com/user-attachments/assets/87df773d-a8b2-4411-9855-3d8f640341a9)
-Note that after this `Build Docker App Image` workflow completes, a manual Pull Request will be created for code review and upon approval merges the `feature*` branch to the `Develop` branch for automated SIT to begin. This Pull Request process will automatically run the CI checks on all the Python programs too.
+Note that after this `Build Docker App Image` workflow completes, a manual Pull Request will be created for code review and upon approval merges the `feature*` branch to the `Develop` branch for automated SIT to begin. 
+And a merge Pull Request on both the Feature and Develop branches will automatically run the CI checks on all the Python programs too.
 #### 5. Promote the Application Docker Image from nonprod to prod ECR private registeries
 After the latest `predict_buy_app` version has successfully completed the SIT cycle, a manual Pull Request is created to review and upon approval merges into the Develop branch to the Main branch. And this will trigger the `Promote Tested App Image` workflow - `on: pull_request` of `types: closed` on `branches: main` whenever any of `paths: models/*.pkl.dvc app.py requirements.txt dockerfile trigger_test.py` changes.
 Here's an illustration of the workflow summary screens:
