@@ -44,15 +44,32 @@ And the screenshot of the trained ML model binaries that are saved and version-c
 ![s3-ml-model-artefacts-screenshot](https://github.com/user-attachments/assets/43bb3833-6170-4805-9564-7e853c46fb74)
 #### 4. Build the ML Application using FastAPI
 After the trained ML model is ready, the `build_app.yml` pipeline runs next to build the application Docker image, then scan it for vulnerabilities and publishing it to the image registry which in AWS ECR `ce7-grp-1/nonprod/predict_buy_app` repo. This is the last step of the Training Stage. This `Build Docker App Image` workflow is triggered `on: pull_request` of `types: closed` on `branches: feature*` whenever any of `paths: models/*.pkl.dvc` changes. Alternatively this workflow may also be triggered by manually running in from the GitHub Actions menu tab.
+The ML application of `predict_buy_app` is built using [FastAPI](https://fastapi.tiangolo.com/) and a Dockerfile that builds the application Docker image.
+>
+> FastAPI is a modern, fast (high-performance), web framework for building APIs with Python based on standard Python type hints.
+>
+> Dockerfile:
+>    ```FROM python:3.12
+>
+>WORKDIR /app
+>
+>COPY app.py .
+>COPY models/ ./models/
+>
+>COPY requirements.txt .
+>RUN pip install --no-cache-dir -r requirements.txt
+>
+>CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "80"]```
+>
 Here's an illustration of the workflow summary screens:
 ![build_app-workflow-summary-screenshot1](https://github.com/user-attachments/assets/139348d1-39a1-4c37-a4c0-5babcb42fb60)
 ![build_app-workflow-summary-screenshot2](https://github.com/user-attachments/assets/c2d486c7-0dfe-4c1f-bc4c-bcf0c1534bd1)
 After the Docker image is built, it is tagged with the next release version number as well as being tagged as `:latest`, before pushing it into the ECR nonprod repo `ce7-grp-1/nonprod/predict_buy_app`. We are basing on [SemVer](https://semver.org/) for our release versioning notation.
 ![github-rel-tagging-screenshot1](https://github.com/user-attachments/assets/1b29d29a-31b4-408b-be8d-428fe57a1828)
 ![github-rel-tagging-screenshot2](https://github.com/user-attachments/assets/2e004865-7d54-411f-bdb3-eaf58af63933)
-Here's a screenshot of the regustry repo `ce7-grp-1/nonprod/predict_buy_app` where all the `predict_buy_app` Docker images are pushed to: 
+Here's a screenshot of the registry repo `ce7-grp-1/nonprod/predict_buy_app` where all the `predict_buy_app` Docker images are pushed to: 
 ![ecr-nonprod-repo-screenshot](https://github.com/user-attachments/assets/87df773d-a8b2-4411-9855-3d8f640341a9)
-Note that after this `Build Docker App Image` workflow completes, a manual Pull Request will be created for code review and upon approval merges the `feature*` branch to the `Develop` branch for automated SIT to begin. 
+Note that after this `Build Docker App Image` workflow completes, a manual Pull Request will be created for code review and upon approval merges the Feature branch to the Develop branch for automated SIT to begin. 
 And a merge Pull Request on both the Feature and Develop branches will automatically run the CI checks on all the Python programs too.
 #### 5. Promote the Application Docker Image from nonprod to prod ECR private registeries
 After the latest `predict_buy_app` version has successfully completed the SIT cycle, a manual Pull Request is created to review and upon approval merges into the Develop branch to the Main branch. And this will trigger the `Promote Tested App Image` workflow - `on: pull_request` of `types: closed` on `branches: main` whenever any of `paths: models/*.pkl.dvc app.py requirements.txt dockerfile trigger_test.py` changes.
@@ -60,7 +77,7 @@ Here's an illustration of the workflow summary screens:
 ![promote_app-workflow-summary-screenshot1](https://github.com/user-attachments/assets/ae6c75c7-654b-418f-bfca-74351e59f1ea)
 ![promote_app-workflow-summary-screenshot2](https://github.com/user-attachments/assets/226ac1e9-875f-414a-b036-10ea14dea1be)
 #### 6. Test run the `predict_buy_app` using Postman
-
+Finally after Steps 5 or 6, you can test the latest-trained ML application via Postman
 #### Dependencies
 ![MLOps CICD Plan](https://github.com/user-attachments/assets/bd768c7e-b205-4e3d-8f6f-431a1ec079d7)
 #### Application or Repo Structure
