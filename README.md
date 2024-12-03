@@ -54,12 +54,15 @@ Clone the above-mentioned Git repositories and then take the following steps of 
 ### ML Model Training & Publishing
 _fill in the workflow pipeline steps to check, install, build and execute_<br>
 _remove this section as according_
+![ML Pipeline](https://github.com/user-attachments/assets/1dc7dcd8-a8c5-4944-b24a-31df6cf235fd)
 #### Dependencies
 _fill in the dependencies if any_
+![MLOps CICD Plan](https://github.com/user-attachments/assets/bd768c7e-b205-4e3d-8f6f-431a1ec079d7)
 #### Application or Repo Structure
 _describe the application or repo structure if any_
 #### Branching Strategies
 _describe the branching strategy if any_
+![Adapted Branching Strategy](https://github.com/user-attachments/assets/0ffa771d-574b-400a-ba0d-20d7fb1ea65e)
 #### Production Branch
 _describe the branch actions for prod env if any_
 #### Non-Production Branch
