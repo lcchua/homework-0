@@ -1,7 +1,7 @@
 # NTU CE7 Group 1 Capstone Project Use-Case Documentation
 <br>
 
-![MLOps Overview](https://github.com/user-attachments/assets/b7e4e120-6c5d-41c1-aac1-2c69889b8f95)  
+<img src="https://github.com/user-attachments/assets/b7e4e120-6c5d-41c1-aac1-2c69889b8f95" alt="MLOps Overview" width="1000" />
 <br>
 
 ### Our Company Profile
@@ -18,7 +18,7 @@ Quantum AI is a Singapore-based tech startup specializing in AI platform enginee
 
 ## The Project
 Project Name: **Machine-Learning (ML) DevOps with DevSecOps and SRE Monitoring**<br>
-- Our organization repositor [CE7-Group1-Capstone](https://github.com/CE7-Group1-Capstone) is consisting of: 
+- Our organization repository [CE7-Group1-Capstone](https://github.com/CE7-Group1-Capstone) consists of: 
   - [CI & Docker Image Registry Pipeline for ML Model Training & Publishing](https://github.com/CE7-Group1-Capstone/mlops-project)
   - [CI/CD Pipeline for AWS EKS/K8S Clusters Infrastructure & Monitoring Tools](https://github.com/CE7-Group1-Capstone/Capstone-Infrastructure)
   - CD Pipeline for Insurance Buying Prediction Application Deployment & Rollback is part of the above 2 repos
@@ -49,61 +49,42 @@ It comprises of 3 major domains:
 <br>
 
 ## Getting Started
-Clone the above-mentioned Git repositories and get started with the project as follows:
+First clone the above-mentioned Git repositories and get started with the project as follows:
 
 ### ML Model Training & Publishing
-_fill in the workflow pipeline steps to check, install, build and execute_<br>
-_remove this section as according_
+In general, a typical ML pipeline has 3 workflow stages - Data Preparation, Model Training, Model Deployment, as depicted in the diagram below. 
 ![ML Pipeline](https://github.com/user-attachments/assets/1dc7dcd8-a8c5-4944-b24a-31df6cf235fd)
 
-#### 1. Clone the Repository
-Clone the project repository from GitHub:
+#### 1. Clone the Specific Git Repo
+After the CE7-Group1-Capstone organisation "mlops-project" repository is cloned from GitHub, you will see the following screen from the Web browser.
 ```bash
-git clone https://github.com/lcchua/mlops-project.git
+  git clone https://github.com/CE7-Group1-Capstone/mlops-project.git
 ```
-```bash
-cd mlops-project
-```
+![git-repo-screenshot](https://github.com/user-attachments/assets/0572bcbc-d36a-4021-95f6-11ca19be007f)
+### 2. First-time infra resource creation of the AWS S3 bucket and ECR private repos
+For the first-time deployment, you will need to create a S3 bucket and the 2 ECR private repos. Click on `Actions` menu tab and you will see the following screen of the available GitHub Actions workflows:
+![gha-ci-tf-screenshot](https://github.com/user-attachments/assets/b5fe8dff-de6d-4246-80d9-e75b7eb91a8f)
+Next click on `CI Terraform` followed by click on `Run workflow`, then select _Use workflow from_ `Branch: main` and finally clicking on the `Run workflow` button. This will trigger a series of Terraform initialising, linting, formatting and validating checks - tflint, checkov, terraform init/fmt/validate.
+
+After the `CI Terraform` workflow runs successfully, click on the next workflow of `CD Terraform` to run. Select `Branch: main` and choose `y` for the _Do you really want to proceed (y/n)?_ prompt.
+![gha-cd-tf-screenshot](https://github.com/user-attachments/assets/e938c533-9145-4c80-a814-0a9f6a615cee)
+This will trigger the Terraform AWS resources creation of the S3 bucket and ECR private repos:
+  - S3 bucket `ce7-grp-1-bucket`
+    - `new_ML_data` folder where the model training dataset (named as `train.csv`) and the model testing dataset (named as `test.csv`) are stored
+    - `DVC_Artefacts` folder where the version control metadata of the trained ML models are saved by the [Data Version Control](https://dvc.org/) (DVC) tool that is used in the other workflows.
+  - ECR private repos of `ce7-grp-1/nonprod/predict_buy_app` and `ce7-grp-1/prod/predict_buy_app`
+
 #### 2. Set Up the Environment
-Ensure you have Python 3.8+ installed. Create a virtual environment and install the necessary dependencies:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-```
-Alternatively, you can use the Makefile command:
-```bash
-make setup
-```
+
+
 #### 3. Data Preparation
-Pull the data from DVC. If this command doesn't work, the train and test data are already present in the data folder:
-```bash
-dvc pull
-```
+
 #### 4. Train the Model
-To train the model, run the following command:
-```bash
-python main.py 
-```
-Or use the Makefile command:
-```bash
-make run
-```
-This script will load the data, preprocess it, train the model, and save the trained model to the models/ directory.
+
 #### 5. FastAPI
-Start the FastAPI application by running:
-```bash
-uvicorn app:app --reload
-```
+
 #### 6. Docker
-To build the Docker image and run the container:
-```bash
-docker build -t my_fastapi .
-```
-```bash
-docker run -p 80:80 my_fastapi
-```
-Once your Docker image is built, you can push it to Docker Hub, making it accessible for deployment on any cloud platform.
+
 #### 7. Push the Model to a Docker Image registry
 ```
 ......
