@@ -49,12 +49,65 @@ It comprises of 3 major domains:
 <br>
 
 ## Getting Started
-Clone the above-mentioned Git repositories and then take the following steps of action:
+Clone the above-mentioned Git repositories and get started with the project as follows:
 
 ### ML Model Training & Publishing
 _fill in the workflow pipeline steps to check, install, build and execute_<br>
 _remove this section as according_
 ![ML Pipeline](https://github.com/user-attachments/assets/1dc7dcd8-a8c5-4944-b24a-31df6cf235fd)
+
+#### 1. Clone the Repository
+Clone the project repository from GitHub:
+```bash
+git clone https://github.com/lcchua/mlops-project.git
+```
+```bash
+cd mlops-project
+```
+#### 2. Set Up the Environment
+Ensure you have Python 3.8+ installed. Create a virtual environment and install the necessary dependencies:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+Alternatively, you can use the Makefile command:
+```bash
+make setup
+```
+#### 3. Data Preparation
+Pull the data from DVC. If this command doesn't work, the train and test data are already present in the data folder:
+```bash
+dvc pull
+```
+#### 4. Train the Model
+To train the model, run the following command:
+```bash
+python main.py 
+```
+Or use the Makefile command:
+```bash
+make run
+```
+This script will load the data, preprocess it, train the model, and save the trained model to the models/ directory.
+#### 5. FastAPI
+Start the FastAPI application by running:
+```bash
+uvicorn app:app --reload
+```
+#### 6. Docker
+To build the Docker image and run the container:
+```bash
+docker build -t my_fastapi .
+```
+```bash
+docker run -p 80:80 my_fastapi
+```
+Once your Docker image is built, you can push it to Docker Hub, making it accessible for deployment on any cloud platform.
+#### 7. Push the Model to a Docker Image registry
+```
+......
+```
 #### Dependencies
 _fill in the dependencies if any_
 ![MLOps CICD Plan](https://github.com/user-attachments/assets/bd768c7e-b205-4e3d-8f6f-431a1ec079d7)
