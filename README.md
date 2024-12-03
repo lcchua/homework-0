@@ -51,59 +51,10 @@ It comprises of 3 major domains:
 ## Getting Started
 First clone the above-mentioned Git repositories and get started with the project in the following sections:
 - [ML Model Training and Publishing](docs/getting_started_clc.md)
-### AWS EKS/Kubernetes Cluster Infrastructure
-_fill in the workkflow pipeline steps to check, install, build and execute_<br>
-_remove this section as according_
-#### Dependencies
-_fill in the dependencies if any_
-#### Application or Repo Structure
-_describe the application or repo structure if any_
-#### Branching Strategies
-_describe the branching strategy if any_
-#### Production Branch
-_describe the branch actions for prod env if any_
-#### Non-Production Branch
-_describe the branch actions for nonprod env if any_
-#### CICD Pipeline
-_describe the pipeline workflow including output samples if any_
-#### Learning Journey
-_add what "little secrets" have been learnt that you like to share with others_ 
+- [AWS EKS/Kubernetes Cluster Infrastructure](docs/getting_started_ty.md)
+- [Prometheus & Grafana SRE Monitoring Tools](docs/getting_started_jj.md)
+- [Insurance Buying Prediction Application Deployment & Rollback](docs/getting_started_st.md)
 
-### Prometheus & Grafana SRE Monitoring Tools
-_fill in the workflow pipeline steps to check, install, build and execute_<br>
-_remove this section as according_
-#### Dependencies
-_fill in the dependencies if any_
-#### Application or Repo Structure
-_describe the application or repo structure if any_
-#### Branching Strategies
-_describe the branching strategy if any_
-#### Production Branch
-_describe the branch actions for prod env if any_
-#### Non-Production Branch
-_describe the branch actions for nonprod env if any_
-#### CICD Pipeline
-_describe the pipeline workflow including output samples if any_
-#### Learning Journey
-_add what "little secrets" have been learnt that you like to share with others_ 
-
-### Insurance Buying Prediction Application Deployment & Rollback
-_fill in the workflow pipeline steps to check, install, build and execute_<br>
-_remove this section as according_
-#### Dependencies
-_fill in the dependencies if any_
-#### Application or Repo Structure
-_describe the application or repo structure if any_
-#### Branching Strategies
-_describe the branching strategy if any_
-#### Production Branch
-_describe the branch actions for prod env if any_
-#### Non-Production Branch
-_describe the branch actions for nonprod env if any_
-#### CICD Pipeline
-_describe the pipeline workflow including output samples if any_
-#### Learning Journey
-_add what "little secrets" have been learnt that you like to share with others_ 
 
 <br>
 
