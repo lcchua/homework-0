@@ -12,7 +12,7 @@ Quantum AI is a Singapore-based tech startup specializing in AI platform enginee
 | Stephen Tan               | DevOps/DevSecOps Engineer           | GitHub & CICD Wizard                         |
 | Tan Yuan                  | Cloud & On-Premise Infra Engineer   | Kubernetes & Cloud Master                    |
 | Jun Jie                   | Platform Monitoring Engineer        | Prometheus & Grafana Spymmaster              | 
-| Chua Lai Chwang           | MLOps Engineer & Project Manager    | GitHub Actions Conductor                     |
+| Chua Lai Chwang           | MLOps Engineer & Project Manager    | GitHub Actions Scrum Master                  |
 
 <br>
 
@@ -52,15 +52,18 @@ It comprises of 3 major domains:
 First clone the above-mentioned Git repositories and get started with the project as follows:
 
 ### ML Model Training & Publishing
-In general, a typical ML pipeline has 3 workflow stages - Data Preparation, Model Training, Model Deployment, as depicted in the diagram below. 
+In general, a typical ML Pipeline has 3 workflow stages - Data Preparation, Model Training, Model Deployment, as depicted in the diagram below. 
 ![ML Pipeline](https://github.com/user-attachments/assets/1dc7dcd8-a8c5-4944-b24a-31df6cf235fd)
 
-#### 1. Clone the Specific Git Repo
+#### 1. Clone the Specific Git Repo for ML Model Training and Publishing
 After the CE7-Group1-Capstone organisation "mlops-project" repository is cloned from GitHub, you will see the following screen from the Web browser.
 ```bash
   git clone https://github.com/CE7-Group1-Capstone/mlops-project.git
 ```
 ![git-repo-screenshot](https://github.com/user-attachments/assets/0572bcbc-d36a-4021-95f6-11ca19be007f)
+Before we proceed to the next step, we need to configure the GitHub repo as follows:
+![github-env-variables-screenshot](https://github.com/user-attachments/assets/8f4fdc67-b663-4042-bd01-a24eb4c09133)
+![github-secret-variables-screenshot](https://github.com/user-attachments/assets/ac4666fc-42fb-42be-8456-9a751a4782fe)
 ### 2. First-time infra resource creation of the AWS S3 bucket and ECR private repos
 For the first-time deployment, you will need to create a S3 bucket and the 2 ECR private repos. Click on `Actions` menu tab and you will see the following screen of the available GitHub Actions workflows:
 ![gha-ci-tf-screenshot](https://github.com/user-attachments/assets/b5fe8dff-de6d-4246-80d9-e75b7eb91a8f)
@@ -72,10 +75,14 @@ This will trigger the Terraform AWS resources creation of the S3 bucket and ECR 
   - S3 bucket `ce7-grp-1-bucket`
     - `new_ML_data` folder where the model training dataset (named as `train.csv`) and the model testing dataset (named as `test.csv`) are stored
     - `DVC_Artefacts` folder where the version control metadata of the trained ML models are saved by the [Data Version Control](https://dvc.org/) (DVC) tool that is used in the other workflows.
+  ![s3-bucket-screenshot](https://github.com/user-attachments/assets/a8e40738-a771-4785-b5be-cb91eec92aef)
   - ECR private repos of `ce7-grp-1/nonprod/predict_buy_app` and `ce7-grp-1/prod/predict_buy_app`
-
-#### 2. Set Up the Environment
-
+  ![ecr-repo-screenshot](https://github.com/user-attachments/assets/6de870bc-1cc3-48d5-a4e3-df1062edbd8b)
+Now that the AWS resources for ML model Training and Publishing are created, we can then proceed with the Data Prep Stage of the ML Pipeline.
+#### 2. Preparing the ML training and testing datasets
+Upload the `train.csv` and `'test.csv` files  into the S3 bucket.
+![new-datasets-s3-bucket-screenshot](https://github.com/user-attachments/assets/a5da19c2-235a-48d6-a2c7-e22f3eec636e)
+[ml-datasets.zip](https://github.com/user-attachments/files/17989198/ml-datasets.zip)
 
 #### 3. Data Preparation
 
