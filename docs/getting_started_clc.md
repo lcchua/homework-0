@@ -49,7 +49,7 @@ The ML application of `predict_buy_app` is built using [FastAPI](https://fastapi
 > FastAPI is a modern, fast (high-performance), web framework for building APIs with Python based on standard Python type hints.
 >
 > Dockerfile:
->    ```FROM python:3.12
+>```FROM python:3.12
 >
 >WORKDIR /app
 >
@@ -77,7 +77,23 @@ Here's an illustration of the workflow summary screens:
 ![promote_app-workflow-summary-screenshot1](https://github.com/user-attachments/assets/ae6c75c7-654b-418f-bfca-74351e59f1ea)
 ![promote_app-workflow-summary-screenshot2](https://github.com/user-attachments/assets/226ac1e9-875f-414a-b036-10ea14dea1be)
 #### 6. Test run the `predict_buy_app` using Postman
-Finally after Steps 5 or 6, you can test the latest-trained ML application via Postman
+Finally after Steps 5 or 6, you can test the latest-trained ML application via Postman as follows, assuming that the the application has been deployed into the K8S cluster via `kubectl apply` command:
+<img width="1431" alt="Screenshot 2024-12-03 at 7 50 58 PM" src="https://github.com/user-attachments/assets/6f8fe669-2475-4de9-8c50-8c19b118b0d2">
+Or alternatively, run the curl command of:
+```bash
+curl --location 'http://mlops.ce7-grp-1.sctp-sandbox.com:80/predict' \
+--header 'Content-Type: application/json' \
+--data \
+'{
+    "Gender": "Female",
+    "Age": 46,
+    "HasDrivingLicense": 1,
+    "RegionID": 21.0,
+    "Switch": 0,
+    "PastAccident": "Yes",
+    "AnnualPremium": "2305.40"
+}'
+```
 #### Dependencies
 ![MLOps CICD Plan](https://github.com/user-attachments/assets/bd768c7e-b205-4e3d-8f6f-431a1ec079d7)
 #### Application or Repo Structure
