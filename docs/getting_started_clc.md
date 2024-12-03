@@ -77,7 +77,7 @@ Here's an illustration of the workflow summary screens:
 ![promote_app-workflow-summary-screenshot1](https://github.com/user-attachments/assets/ae6c75c7-654b-418f-bfca-74351e59f1ea)
 ![promote_app-workflow-summary-screenshot2](https://github.com/user-attachments/assets/226ac1e9-875f-414a-b036-10ea14dea1be)
 #### 6. Test run the `predict_buy_app` using Postman
-Finally after Steps 5 or 6, you can test the latest-trained ML application via Postman or `curl` command. This is assuming that the the application has been deployed into the K8S cluster from [Insurance Buying Prediction Application Deployment & Rollback](docs/getting_started_st.md).
+Finally after Steps 5 or 6, you can test the latest-trained ML application via Postman or `curl` command. This is assuming that the the application has been deployed into the K8S cluster from the CD workflow of [Insurance Buying Prediction Application Deployment & Rollback](docs/getting_started_st.md).
 <img width="1431" alt="Screenshot 2024-12-03 at 7 50 58 PM" src="https://github.com/user-attachments/assets/6f8fe669-2475-4de9-8c50-8c19b118b0d2">
 Or alternatively, run the curl command of:
 ```bash
@@ -93,6 +93,14 @@ curl --location 'http://mlops.ce7-grp-1.sctp-sandbox.com:80/predict' \
     "PastAccident": "Yes",
     "AnnualPremium": "2305.40"
 }'
+
+Otherwise, you can also run the following Bash commands from your local terminal:
+```bash
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin <aws_account_id>.dkr.ecr.us-east-1.amazonaws.com
+
+docker pull <aws_account_id>.dkr.ecr.us-east-1.amazonaws.com/ce7-grp-1/<nonprod|prod>/predict_buy_app:latest
+
+docker -d -p 80:80 predict_buy_app:latest
 ```
 #### Dependencies
 ![MLOps CICD Plan](https://github.com/user-attachments/assets/bd768c7e-b205-4e3d-8f6f-431a1ec079d7)
