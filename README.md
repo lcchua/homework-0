@@ -51,22 +51,6 @@ It comprises of 3 major domains:
 ## Getting Started
 First clone the above-mentioned Git repositories and get started with the project as follows:
 
-#### Dependencies
-![MLOps CICD Plan](https://github.com/user-attachments/assets/bd768c7e-b205-4e3d-8f6f-431a1ec079d7)
-#### Application or Repo Structure
-|![repo-structure-screenshot1](https://github.com/user-attachments/assets/0abb694f-9581-4e45-ab59-f02d45e77932)|
-![repo-structure-screenshot2](https://github.com/user-attachments/assets/91e99fee-e5d6-4318-89e8-bb2028ec6c15) |
-#### Branching Strategies
-![Adapted Branching Strategy](https://github.com/user-attachments/assets/0ffa771d-574b-400a-ba0d-20d7fb1ea65e)
-#### Production Branch
-_describe the branch actions for prod env if any_
-#### Non-Production Branch
-_describe the branch actions for nonprod env if any_
-#### CICD Pipeline
-_describe the pipeline workflow including output samples if any_
-#### Learning Journey
-_add what "little secrets" have been learnt that you like to share with others_ 
-
 ### AWS EKS/Kubernetes Cluster Infrastructure
 _fill in the workkflow pipeline steps to check, install, build and execute_<br>
 _remove this section as according_
