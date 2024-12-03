@@ -1,7 +1,7 @@
 # NTU CE7 Group 1 Capstone Project Use-Case Documentation
 <br>
 
-![Alt text 1 MLOps](https://github.com/user-attachments/assets/b7e4e120-6c5d-41c1-aac1-2c69889b8f95)  
+![MLOps Overview](https://github.com/user-attachments/assets/b7e4e120-6c5d-41c1-aac1-2c69889b8f95)  
 <br>
 
 ### Our Company Profile
@@ -26,7 +26,7 @@ Project Name: **Machine-Learning (ML) DevOps with DevSecOps and SRE Monitoring**
 ### Scope, Context and Motivation 
 The primary use-case of this project centres on DevOps combined with basic use-cases of DevSecOps and SRE monitoring. This project covers the developing and deploying of machine learning (ML) models to the resilient, cloud-native Kubernetes (K8S) clusters in the non-production and production environments. The maintenance of ML models is excluded from this capstone due to time limitation. This CICD automation process of "DevOps for ML application" is known as MLOps which is generally illustrated as below. 
 
-![Alt text 2 MLOps](https://github.com/user-attachments/assets/a8f49323-ff20-44a9-b9ca-c5feccc7d8dc)
+![MLOps Process](https://github.com/user-attachments/assets/a8f49323-ff20-44a9-b9ca-c5feccc7d8dc)
 
 For our capstone scope, we have impelmented the source repository, CI/CD pipelines, data engineering, ML model engineering, ML metadata store including the ML model and data version control, model registry (of FastAPI app Docker images) and CD stage (of ML models serving as container Pods/Services/Deployments in the K8S clusters).
 
@@ -37,7 +37,11 @@ Our motivation for electing the implementation coverage of MLOps, Kubernetes and
 With the currrent proliferation of AI, it is imperative that the field of MLOps or AIOps will be a necessity in the technological advancement and mass adoption of AI wherein the process automation of AI/ML operation and security is essential.
 
 ### Solution Architecture Overview
-![image](https://github.com/user-attachments/assets/751c6076-9e29-4c76-b1f3-dcafabd17de3)
+The solution architecture can be depicted as follows:
+
+![MLOps Capstone Solution Architecture](https://github.com/user-attachments/assets/751c6076-9e29-4c76-b1f3-dcafabd17de3)
+
+
 
 <br>
 
