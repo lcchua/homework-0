@@ -53,7 +53,7 @@ After the Docker image is built, it is tagged with the next release version numb
 Here's a screenshot of the regustry repo `ce7-grp-1/nonprod/predict_buy_app` where all the `predict_buy_app` Docker images are pushed and can be subsequently merged ino the `Develop` branch to be deployed for SIT in the nonprod/staging environment.
 ![ecr-nonprod-repo-screenshot](https://github.com/user-attachments/assets/87df773d-a8b2-4411-9855-3d8f640341a9)
 #### 5. Promote the Application Docker Image from nonprod to prod ECR private registeries
-
+After the latest `predict_buy_app` version has successfully completed SIT off the Develop branch release, 
 #### 6. Test run the `predict_buy_app` using Postman
 
 #### Dependencies
