@@ -41,15 +41,15 @@ The solution architecture can be described as follows:
 
 ![MLOps Capstone Solution Architecture](https://github.com/user-attachments/assets/751c6076-9e29-4c76-b1f3-dcafabd17de3)
 
-It consists of 3 major domains:
+It comprises of 3 major domains:
   -  Machine Learning Development: ML Model Training and Publishing to AWS Elastic Container Registry (ECR) with AWS S3 bucket for the ML model version control metatdata and training datasets storage
   -  Cluster Infra Deployment: Terraform creation for AWS Elastic Kubernetes Service (EKS), Prometheus / Grafana monitoring tools, K8S / AWS CloudWatch / Loki logging stack
-  -  Prediction Application Deployment & Rollback: GitHub Actions CD workflow pipeline from ECR to EKS
+  -  Prediction Application Deployment & Rollback: GitHub Actions CD workflow pipeline from ECR to EKS for deployment to prod environment
 
 <br>
 
 ## Getting Started
-Clone the above-mentioned Git repositories and then follow the following steps of action:
+Clone the above-mentioned Git repositories and then take the following steps of action:
 
 ### ML Model Training & Publishing
 _fill in the workflow pipeline steps to check, install, build and execute_<br>
