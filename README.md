@@ -37,11 +37,14 @@ Our motivation for electing the implementation coverage of MLOps, Kubernetes and
 With the currrent proliferation of AI, it is imperative that the field of MLOps or AIOps will be a necessity in the technological advancement and mass adoption of AI wherein the process automation of AI/ML operation and security is essential.
 
 ### Solution Architecture Overview
-The solution architecture can be depicted as follows:
+The solution architecture can be described as follows:
 
 ![MLOps Capstone Solution Architecture](https://github.com/user-attachments/assets/751c6076-9e29-4c76-b1f3-dcafabd17de3)
 
-
+It consists of 3 major domains:
+  -  Machine Learning Development: ML Model Training and Publishing to AWS Elastic Container Registry (ECR) with AWS S3 bucket for the ML model version control metatdata and training datasets storage
+  -  Cluster Infra Deployment: Terraform creation for AWS Elastic Kubernetes Service (EKS), Prometheus / Grafana monitoring tools, K8S / AWS CloudWatch / Loki logging stack
+  -  Prediction Application Deployment & Rollback: GitHub Actions CD workflow pipeline from ECR to EKS
 
 <br>
 
@@ -50,7 +53,7 @@ Clone the above-mentioned Git repositories and then follow the following steps o
 
 ### ML Model Training & Publishing
 _fill in the workflow pipeline steps to check, install, build and execute_<br>
-_remove this section as according_`
+_remove this section as according_
 #### Dependencies
 _fill in the dependencies if any_
 #### Application or Repo Structure
@@ -66,7 +69,7 @@ _describe the pipeline workflow including output samples if any_
 #### Learning Journey
 _add what "little secrets" have been learnt that you like to share with others_ 
 
-## AWS EKS/Kubernetes Cluster Infrastructure
+### AWS EKS/Kubernetes Cluster Infrastructure
 _fill in the workkflow pipeline steps to check, install, build and execute_<br>
 _remove this section as according_
 #### Dependencies
@@ -84,7 +87,7 @@ _describe the pipeline workflow including output samples if any_
 #### Learning Journey
 _add what "little secrets" have been learnt that you like to share with others_ 
 
-## Prometheus & Grafana SRE Monitoring Tools
+### Prometheus & Grafana SRE Monitoring Tools
 _fill in the workflow pipeline steps to check, install, build and execute_<br>
 _remove this section as according_
 #### Dependencies
@@ -102,7 +105,7 @@ _describe the pipeline workflow including output samples if any_
 #### Learning Journey
 _add what "little secrets" have been learnt that you like to share with others_ 
 
-## Insurance Buying Prediction Application Deployment & Rollback
+### Insurance Buying Prediction Application Deployment & Rollback
 _fill in the workflow pipeline steps to check, install, build and execute_<br>
 _remove this section as according_
 #### Dependencies
