@@ -50,10 +50,11 @@ Here's an illustration of the workflow summary screens:
 After the Docker image is built, it is tagged with the next release version number as well as being tagged as `:latest`, before pushing it into the ECR nonprod repo `ce7-grp-1/nonprod/predict_buy_app`. We are basing on [SemVer](https://semver.org/) for our release versioning notation.
 ![github-rel-tagging-screenshot1](https://github.com/user-attachments/assets/1b29d29a-31b4-408b-be8d-428fe57a1828)
 ![github-rel-tagging-screenshot2](https://github.com/user-attachments/assets/2e004865-7d54-411f-bdb3-eaf58af63933)
-Here's a screenshot of the regustry repo `ce7-grp-1/nonprod/predict_buy_app` where all the `predict_buy_app` Docker images are pushed and can be subsequently merged ino the `Develop` branch to be deployed for SIT in the nonprod/staging environment.
+Here's a screenshot of the regustry repo `ce7-grp-1/nonprod/predict_buy_app` where all the `predict_buy_app` Docker images are pushed to: 
 ![ecr-nonprod-repo-screenshot](https://github.com/user-attachments/assets/87df773d-a8b2-4411-9855-3d8f640341a9)
+Note that after this `Build Docker App Image` workflow completes, a manual Pull Rquest 
 #### 5. Promote the Application Docker Image from nonprod to prod ECR private registeries
-After the latest `predict_buy_app` version has successfully completed SIT off the Develop branch release, 
+After the latest `predict_buy_app` version has successfully completed SIT, a manual Pull Request is created to merge into the Main branch from the Develop branch. 
 #### 6. Test run the `predict_buy_app` using Postman
 
 #### Dependencies
@@ -62,7 +63,7 @@ After the latest `predict_buy_app` version has successfully completed SIT off th
 |![repo-structure-screenshot1](https://github.com/user-attachments/assets/0abb694f-9581-4e45-ab59-f02d45e77932)|
 ![repo-structure-screenshot2](https://github.com/user-attachments/assets/91e99fee-e5d6-4318-89e8-bb2028ec6c15) |
 #### Branching Strategies
-![adapted-branching-strategy](https://github.com/user-attachments/assets/1018e9cf-2851-4797-83fd-63f8cafba03e)
+![adapted-branching-strategy](https://github.com/user-attachments/assets/29d59e48-0818-4895-b7ea-a9b403ee043e)
 #### Production Branch
 _describe the branch actions for prod env if any_
 #### Non-Production Branch
