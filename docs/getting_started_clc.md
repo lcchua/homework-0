@@ -57,7 +57,7 @@ Here's an illustration of the workflow summary screens:
 And the screenshot of the trained ML model binaries that are saved and version-controlled by DVC into the S3 bucket `DVC_artefacts` folder:
 ![s3-ml-model-artefacts-screenshot](https://github.com/user-attachments/assets/43bb3833-6170-4805-9564-7e853c46fb74)
 #### 4. Build the ML Application using FastAPI
-After the trained ML model is ready, the `build_app.yml` pipeline runs next to build the application Docker image, then scanning it for vulnerabilities and publishing it to the private image registry of AWS ECR `ce7-grp-1/nonprod/predict_buy_app` repo. It is the last step of the Training Stage. This `Build Docker App Image` workflow is triggered `on: pull_request` of `types: closed` on `branches: feature*` whenever any of `paths: models/*.pkl.dvc` changes. Alternatively this workflow may also be triggered by manually running in from the GitHub Actions menu tab.
+After the trained ML model is ready, the `build_app.yml` pipeline runs next to build the application Docker image, then scanning it for vulnerabilities using snyk container scan and publishing it to the private image registry of AWS ECR `ce7-grp-1/nonprod/predict_buy_app` repo. It is the last step of the Training Stage. This `Build Docker App Image` workflow is triggered `on: pull_request` of `types: closed` on `branches: feature*` whenever any of `paths: models/*.pkl.dvc` changes. Alternatively this workflow may also be triggered by manually running in from the GitHub Actions menu tab.
 
 The ML application of `predict_buy_app` is built using [FastAPI](https://fastapi.tiangolo.com/) with a Dockerfile that creates the application Docker image.
 >
@@ -85,7 +85,8 @@ After the Docker image is built, it is tagged with the next release version numb
 Here's a screenshot of the registry repo `ce7-grp-1/nonprod/predict_buy_app` where all the `predict_buy_app` Docker images are pushed to: 
 ![ecr-nonprod-repo-screenshot](https://github.com/user-attachments/assets/87df773d-a8b2-4411-9855-3d8f640341a9)
 Note that after this `Build Docker App Image` workflow completes, a manual Pull Request has to be created for code review and upon approval merges the Feature branch into the Develop branch for automated SIT cycle to begin. 
-And a merge Pull Request on both the Feature and Develop branches will automatically run the CI checks on all the Python programs too.
+
+And when there's a merge Pull Request on either the Feature or Develop branch, it will automatically run the CI checks on all the Python programs too - flake8 linting, black formatting, snyk code scanning.
 #### 5. Promote the Application Docker Image from nonprod to prod ECR private registeries
 After the latest `predict_buy_app` version has successfully completed the SIT cycle, a manual Pull Request has to be created for code review and upon approval, merges the codes from the Develop branch to the Main branch. This will automatically trigger the `Promote Tested App Image` workflow to run `on: pull_request` of `types: closed` for `branches: main` whenever any of `paths: models/*.pkl.dvc app.py requirements.txt dockerfile trigger_test.py` changes.
 
