@@ -2,6 +2,8 @@
 General a typical ML Pipeline has 3 workflow stages - Data Preparation, Model Training, Model Deployment, as depicted in the diagram below. 
 ![ML Pipeline](https://github.com/user-attachments/assets/1dc7dcd8-a8c5-4944-b24a-31df6cf235fd)
 
+<br>
+
 To get started,
 #### 1. Clone the specific Git Repo for `mlops-project` and set up the GitHub repo
 After the CE7-Group1-Capstone organisation `mlops-project` repository is cloned from GitHub, you will see the following screen from the Web browser. 
@@ -127,6 +129,8 @@ docker pull <aws_account_id>.dkr.ecr.us-east-1.amazonaws.com/ce7-grp-1/<nonprod|
 docker run -d -p 80:80 predict_buy_app:latest
 ```
 Then you can proceed to test-run the application via Post or `curl` command as mentioned above but replacing the target location URL with that of your local or server host.
+
+<br>
 
 #### Dependencies
 The event trigger dependecies of the GitHub Actions workflows can be described as follows:
