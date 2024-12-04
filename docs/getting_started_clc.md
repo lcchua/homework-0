@@ -43,11 +43,11 @@ This will create the AWS infra resources of the S3 bucket and ECR private repos:
   ![ecr-repos-screenshot](https://github.com/user-attachments/assets/48a4102c-8405-4d10-99cf-6de3ec05dd56)
 Now that the AWS resources for ML model Training and Publishing are created, we can then proceed with the Data Prep Stage of the ML Pipeline.
 #### 2. Preparing the ML training and testing datasets
-Upload the `train.csv` and `'test.csv` files  into the S3 bucket.
+After the training dataset has been cleaned, reformmated, pre-processed and prepped into 2 .csv files of `train.csv` and `test.csv`, then proceed to upload these files into the S3 bucket `new_ML_data` folder.
 ![new-datasets-s3-bucket-screenshot](https://github.com/user-attachments/assets/a5da19c2-235a-48d6-a2c7-e22f3eec636e)
-Example datasets to unzip-then-upload: [ml-datasets.zip](https://github.com/user-attachments/files/17989198/ml-datasets.zip)
+Example datasets: [ml-datasets.zip](https://github.com/user-attachments/files/17989198/ml-datasets.zip) to unzip then upload.
 #### 3. Train the Model using Python with Scikit-Learn
-Now that the new datasets have been uploaded, we then proceed to the Training Stage of the ML Pipeline. The `train_model.yml` pipeline executes the ML model training job which also includes the steps for testing the model using the test dataset post-training as well as the first-time initialisation of the DVC tracking, version-controlling the trained ML model and the associated training dataset used, and scanning the model for vulnerabilities. It is located in the `github/workflows` folder.
+Now that the new datasets have been uploaded, we next proceed to the Training Stage of the ML Pipeline. The `train_model.yml` pipeline executes the ML model training job which also includes the steps for testing the model using the test dataset post-training as well as the first-time initialisation of the DVC tracking, version-controlling the trained ML model and the associated training dataset used, and scanning the model for vulnerabilities. It is located in the `.github/workflows` folder.
 This `Train ML Model` workflow is triggered `on: push` to `branches: feature*` whenever any of `paths: main.py config.yml steps/*py requirements.txt trigger_test.py` changes. The latter `trigger_test.py` is a dummy Python program that can be changed with no impact whenever you wish to test-run this workflow. Alternatively this workflow may also be triggered by manually running in from the GitHub Actions menu tab.
 Here's an illustration of the workflow summary screens:
 ![train_model-workflow-summary-screenshot1](https://github.com/user-attachments/assets/1ac5ee58-2786-4ce2-9c6f-9caf0b9a9692)
