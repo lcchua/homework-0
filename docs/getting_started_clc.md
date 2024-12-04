@@ -54,8 +54,8 @@ This `Train ML Model` workflow is triggered `on: push` to `branches: feature*` w
 
 After each run of the workflow steps of `Train the prediction model` and `Test the trained model` in sequence, it outputs respectively the following:
 
-![train_the_prediction_model-screenshot](https://github.com/user-attachments/assets/5c50d34d-2271-4db4-aba0-bd3eafd9ceb9)
-![test_the_trained_model-screenshot](https://github.com/user-attachments/assets/82b00c1c-b8af-4921-a954-bccaa56e6e8c)
+  ![train_the_prediction_model-screenshot](https://github.com/user-attachments/assets/5c50d34d-2271-4db4-aba0-bd3eafd9ceb9)
+  ![test_the_trained_model-screenshot](https://github.com/user-attachments/assets/82b00c1c-b8af-4921-a954-bccaa56e6e8c)
 
 Here's an illustration of the workflow summary screen:
   ![train_model-workflow-summary-screenshot1](https://github.com/user-attachments/assets/1ac5ee58-2786-4ce2-9c6f-9caf0b9a9692)
@@ -85,6 +85,8 @@ The ML application of `predict_buy_app` is built using [FastAPI](https://fastapi
 >
 Here's an illustration of the workflow summary screen:
   ![build_app-workflow-summary-screenshot1](https://github.com/user-attachments/assets/139348d1-39a1-4c37-a4c0-5babcb42fb60)
+  ![snyk_container_test_output-screenshot](https://github.com/user-attachments/assets/75b5af35-f951-4ed9-80a5-1a8c039ffbc6)
+
 After the Docker image is built, it is tagged with the next release version number as well as being tagged as `:latest`, before pushing it into the ECR nonprod repo `ce7-grp-1/nonprod/predict_buy_app`. We are basing on [SemVer](https://semver.org/) for our release versioning notation of <major_no>.<minor_no>.<patch_no>.
   ![github-rel-tagging-screenshot1](https://github.com/user-attachments/assets/1b29d29a-31b4-408b-be8d-428fe57a1828)
   ![github-rel-tagging-screenshot2](https://github.com/user-attachments/assets/2e004865-7d54-411f-bdb3-eaf58af63933)
@@ -139,9 +141,14 @@ The branching strategy adopted in this project is adapted from Trunk-based and G
   ![adapted-branching-strategy](https://github.com/user-attachments/assets/29d59e48-0818-4895-b7ea-a9b403ee043e)
 #### Main Branch
 The production branch is denoted as the Main branch. Only the `Promote Tested App Image` workflow runs here that will promote a (SIT) tested `predict_buy_app` from the Develop branch to the Main branch for production release.
+  ![develop-main-branch-cicd-diagram](https://github.com/user-attachments/assets/c7ef152b-897c-4651-8048-4f3ba96945c9)
 #### Develop Branch
-
+  ![feature-branch-cicd-diagram](https://github.com/user-attachments/assets/9f21271d-bf15-4fee-96d0-54972e96a209)
 #### CICD Pipeline
+  ![ci_tf_workflow-screenshot](https://github.com/user-attachments/assets/a1904669-5a34-4980-8422-8ac46a0dc56c)
+  ![ci_tf_checkov_output-screenshot](https://github.com/user-attachments/assets/72ee43d8-4819-4dff-b356-e53c73480062)
+  ![cd_tf_workflow-screenshot1](https://github.com/user-attachments/assets/0409d9a6-c6f8-42e1-a26f-34e30578fdd8)
+  ![cd_tf_workflow_screenshot2](https://github.com/user-attachments/assets/a3a422cb-ab5a-41cd-9ca8-8b6c8dbb2e39)
   ![train_model-workflow-summary-screenshot2](https://github.com/user-attachments/assets/9780aaa1-6dfb-448e-a86d-50e36ab9fd9c)
   ![build_app-workflow-summary-screenshot2](https://github.com/user-attachments/assets/c2d486c7-0dfe-4c1f-bc4c-bcf0c1534bd1)
   ![promote_app-workflow-summary-screenshot2](https://github.com/user-attachments/assets/226ac1e9-875f-414a-b036-10ea14dea1be)
@@ -151,4 +158,3 @@ The production branch is denoted as the Main branch. Only the `Promote Tested Ap
   ![py-snyk-scanning-screenshot](https://github.com/user-attachments/assets/35882bac-bae0-4fea-a292-2784a82fb9f7)
 #### Learning Journey
 _add what "little secrets" have been learnt that you like to share with others_ 
-
