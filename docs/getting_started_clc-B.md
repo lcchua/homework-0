@@ -1,3 +1,5 @@
+[Go to Part A](docs/getting_started_clc-B.md)
+<br>
 #### Dependencies
 The event trigger dependecies of the GitHub Actions workflows can be described as follows:
   ![MLOps CICD Plan](https://github.com/user-attachments/assets/bd768c7e-b205-4e3d-8f6f-431a1ec079d7)
