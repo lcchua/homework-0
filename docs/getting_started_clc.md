@@ -4,7 +4,7 @@ General a typical ML Pipeline has 3 workflow stages - Data Preparation, Model Tr
 
 To get started,
 
-#### 1. Clone the Specific Git Repo for ML Model Training and Publishing
+#### 1. Clone the specific Git Repo for ML Model Training and Publishing
 After the CE7-Group1-Capstone organisation "mlops-project" repository is cloned from GitHub, you will see the following screen from the Web browser.
 ```bash
   git clone https://github.com/CE7-Group1-Capstone/mlops-project.git
