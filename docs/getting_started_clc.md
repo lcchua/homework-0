@@ -29,6 +29,7 @@ Next click on `CI Terraform` followed by click on `Run workflow`, then select _U
 
 After the `CI Terraform` workflow runs successfully, click on the next workflow of `CD Terraform` to run. Select `Branch: main` and choose `y` for the _Do you really want to proceed (y/n)?_ prompt. This will trigger Terraform init/plan/apply to run.
   ![gha-cd-tf-screenshot](https://github.com/user-attachments/assets/e938c533-9145-4c80-a814-0a9f6a615cee)
+
 This will create the AWS infra resources of the S3 bucket and ECR private repos:
   - S3 bucket `ce7-grp-1-bucket`
     - `new_ML_data` folder where the model training dataset (named as `train.csv`) and the model testing dataset (named as `test.csv`) are stored
