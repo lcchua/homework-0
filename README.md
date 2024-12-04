@@ -39,7 +39,7 @@ With the currrent proliferation of AI, it is imperative that the field of MLOps 
 ### Solution Architecture Overview
 The solution architecture can be described as follows:
 
-![capstone-project-solution-architecture](https://github.com/user-attachments/assets/03c2e605-afa4-4b1d-9d02-48057d604e8d)
+![capstone-project-solution-architecture](https://github.com/user-attachments/assets/78a5c694-c5f8-42ae-8bd2-3d508bb33639)
 
 It comprises of 3 major domains:
   -  **Machine Learning Development**: ML Model Training and Publishing to AWS Elastic Container Registry (ECR) with AWS S3 bucket for the ML model version control metatdata and training datasets storage
