@@ -88,7 +88,7 @@ Note that after this `Build Docker App Image` workflow completes, a manual Pull 
 
 And when there's a merge Pull Request on either the Feature or Develop branch, it will automatically run the CI checks on all the Python programs too - `flake8` linting, `black` formatting, `snyk code test` scanning.
 #### 5. Promote the Application Docker Image from nonprod to prod ECR private registeries
-After the latest `predict_buy_app` version has successfully completed the SIT cycle, a manual Pull Request has to be created for code review and upon approval, merges the codes from the Develop branch to the Main branch. This will automatically trigger the `Promote Tested App Image` workflow to run `on: pull_request` of `types: closed` for `branches: main` whenever any of `paths: models/*.pkl.dvc app.py requirements.txt dockerfile trigger_test.py` changes.
+After the latest `predict_buy_app` version has successfully completed the SIT cycle, a manual Pull Request has to be created for code review and upon approval, merges the Develop branch with the Main branch. This will automatically trigger the `Promote Tested App Image` workflow to run `on: pull_request` of `types: closed` for `branches: main` whenever any of `paths: models/*.pkl.dvc app.py requirements.txt dockerfile trigger_test.py` changes.
 
 Here's an illustration of the workflow summary screens:
 ![promote_app-workflow-summary-screenshot1](https://github.com/user-attachments/assets/ae6c75c7-654b-418f-bfca-74351e59f1ea)
@@ -111,7 +111,7 @@ curl --location 'http://mlops.ce7-grp-1.sctp-sandbox.com:80/predict' \
     "AnnualPremium": "2305.40"
 }'
 ```
-Otherwise, you can also run the following Bash commands from your local terminal to load and execute the application Docker image from the ECR:
+If the appication has not been deployed into the K8S cluster, you can also run the following Bash commands from your local terminal to load and execute the application Docker image from the ECR:
 ```bash
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin <aws_account_id>.dkr.ecr.us-east-1.amazonaws.com
 
@@ -119,7 +119,7 @@ docker pull <aws_account_id>.dkr.ecr.us-east-1.amazonaws.com/ce7-grp-1/<nonprod|
 
 docker run -d -p 80:80 predict_buy_app:latest
 ```
-Then you can proceed to test-run the application via Post or `curl` command as mentioned above.
+Then you can proceed to test-run the application via Post or `curl` command as mentioned above but replacing the target location URL with that of your local or server host.
 
 #### Dependencies
 ![MLOps CICD Plan](https://github.com/user-attachments/assets/bd768c7e-b205-4e3d-8f6f-431a1ec079d7)
