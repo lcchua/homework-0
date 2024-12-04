@@ -1,4 +1,4 @@
-[Go back Part A](getting_started_clc-B.md)
+[Go back Part A](getting_started_clc-A.md)
 
 #### Dependencies
 The event trigger dependecies of the GitHub Actions workflows can be described as follows:
@@ -31,4 +31,4 @@ The production branch is denoted as the Main branch. Only the `Promote Tested Ap
 #### Learning Journey
 _add what "little secrets" have been learnt that you like to share with others_ 
 
-[Go back Part A](getting_started_clc-B.md)
+[Go back Part A](getting_started_clc-A.md)
