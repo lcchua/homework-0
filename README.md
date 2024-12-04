@@ -49,7 +49,7 @@ It comprises of 3 major domains:
 <br>
 
 ## Getting Started
-First clone the above-mentioned Git repositories and get started with the project in the following sections:
+Firstly, clone the Git repositories mentioned under The Project section above and get started with the project through the following sections:
 - [ML Model Training and Publishing](docs/getting_started_clc.md)
 - [AWS EKS/Kubernetes Cluster Infrastructure](docs/getting_started_ty.md)
 - [Prometheus & Grafana SRE Monitoring Tools](docs/getting_started_jj.md)
