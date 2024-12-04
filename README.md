@@ -39,12 +39,12 @@ With the currrent proliferation of AI, it is imperative that the field of MLOps 
 ### Solution Architecture Overview
 The solution architecture can be described as follows:
 
-![capstone-project-solution-architecture](https://github.com/user-attachments/assets/f07188c2-715f-44cd-b01f-d85c7712d5fd)
+![capstone-project-solution-architecture](https://github.com/user-attachments/assets/03c2e605-afa4-4b1d-9d02-48057d604e8d)
 
 It comprises of 3 major domains:
-  -  Machine Learning Development: ML Model Training and Publishing to AWS Elastic Container Registry (ECR) with AWS S3 bucket for the ML model version control metatdata and training datasets storage
-  -  Cluster Infra Deployment: Terraform creation for AWS Elastic Kubernetes Service (EKS), Prometheus / Grafana monitoring tools, K8S / AWS CloudWatch / Loki logging stack
-  -  Prediction Application Deployment & Rollback: GitHub Actions CD workflow pipeline from ECR to EKS for deployment to prod environment
+  -  **Machine Learning Development**: ML Model Training and Publishing to AWS Elastic Container Registry (ECR) with AWS S3 bucket for the ML model version control metatdata and training datasets storage
+  -  **Kubernetes Cluster Infra Deployment**: Terraform creation for AWS Elastic Kubernetes Service (EKS), Prometheus / Grafana monitoring tools, K8S / AWS CloudWatch / Loki logging stack
+  -  **Prediction Application Deployment & Rollback**: GitHub Actions CD workflow pipeline from ECR to EKS for deployment to prod environment
 
 <br>
 
