@@ -58,6 +58,8 @@ After each run of the workflow steps of `Train the prediction model` and `Test t
 
 Here's an illustration of the workflow summary screen:
   ![train_model-workflow-summary-screenshot1](https://github.com/user-attachments/assets/1ac5ee58-2786-4ce2-9c6f-9caf0b9a9692)
+  ![modelscan_output-screenshot](https://github.com/user-attachments/assets/2d4ef06f-21b3-4d9b-9e01-b77594c1b0f2)
+
 And the screenshot of the trained ML model binaries that are saved and version-controlled by DVC into the S3 bucket `DVC_artefacts` folder:
   ![s3-ml-model-artefacts-screenshot](https://github.com/user-attachments/assets/43bb3833-6170-4805-9564-7e853c46fb74)
 #### 4. Build the ML Application using FastAPI
