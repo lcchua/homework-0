@@ -129,7 +129,6 @@ docker pull <aws_account_id>.dkr.ecr.us-east-1.amazonaws.com/ce7-grp-1/<nonprod|
 docker run -d -p 80:80 predict_buy_app:latest
 ```
 Then you can proceed to test-run the application via Post or `curl` command as mentioned above but replacing the target location URL with that of your local or server host.
-
 <br>
 
 #### Dependencies
