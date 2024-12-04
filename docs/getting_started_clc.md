@@ -3,8 +3,7 @@ General a typical ML Pipeline has 3 workflow stages - Data Preparation, Model Tr
 ![ML Pipeline](https://github.com/user-attachments/assets/1dc7dcd8-a8c5-4944-b24a-31df6cf235fd)
 
 To get started,
-
-#### 1. Clone the specific Git Repo for `mlops-project`
+#### 1. Clone the specific Git Repo for `mlops-project` and set up the GitHub repo
 After the CE7-Group1-Capstone organisation `mlops-project` repository is cloned from GitHub, you will see the following screen from the Web browser. 
 ```bash
   git clone https://github.com/CE7-Group1-Capstone/mlops-project.git
@@ -13,8 +12,16 @@ After the CE7-Group1-Capstone organisation `mlops-project` repository is cloned 
 Before we proceed to the next step, we need to create the following variables and secrets for this GitHub repo:
 ![github-env-variables-screenshot](https://github.com/user-attachments/assets/8f4fdc67-b663-4042-bd01-a24eb4c09133)
 ![github-secret-variables-screenshot](https://github.com/user-attachments/assets/ac4666fc-42fb-42be-8456-9a751a4782fe)
-Ans well as making sure to setup and configure the following:
 
+And as well as making sure to set up and configure the following:
+  - Environments
+      - Create 2 environments, one is named`prod` and the other `nondprod`
+          - Select `Allow administrators to bypass configured protection rules` and leave the other parameters unselected.
+  - Branch protection rules
+      - Create 2 protection rules, one for the branch named `main`and the other for branch named `develop`
+          - Select `Require a pull request before merging` and leave the other parameters unselected.
+  - Actions under General
+      - Select the permissions `Allow all actions and reusable workflows`, `Require approval for all external contributors` and `Read and write permissions` and leave the other parameters unselected or as defaulted.
 ### 2. First-time infra resource creation of the AWS S3 bucket and ECR private repos
 For the first-time deployment, you will need to create a S3 bucket and the 2 ECR private repos. Click on `Actions` menu tab and you will see the following screen of the available GitHub Actions workflows:
 ![gha-ci-tf-screenshot](https://github.com/user-attachments/assets/b5fe8dff-de6d-4246-80d9-e75b7eb91a8f)
