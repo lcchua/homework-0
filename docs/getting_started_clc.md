@@ -25,7 +25,7 @@ And as well as making sure to set up and configure the following:
 ### 2. First-time infra resource creation of the AWS S3 bucket and ECR private repos
 For the first-time deployment, you will need to create a S3 bucket and the 2 ECR private repos. Click on `Actions` menu tab and you will see the following screen of the available GitHub Actions workflows of the left-hand side panel:
 ![gha-ci-tf-screenshot](https://github.com/user-attachments/assets/c46beac4-b340-4d54-b576-c91bce557c29)
-Next click on `CI Terraform` followed by click on `Run workflow`, then select _Use workflow from_ `Branch: main` and finally clicking on the `Run workflow` button. This will trigger a series of Terraform initialising, linting, formatting and validating checks - tflint, checkov, terraform init/fmt/validate.
+Next click on `CI Terraform` followed by click on `Run workflow`, then select _Use workflow from_ `Branch: main` and finally clicking on the `Run workflow` button. This will trigger a series of Terraform initialising, linting, formatting and validating checks - `tflint`, `checkov`, `terraform init/fmt/validate`.
 
 After the `CI Terraform` workflow runs successfully, click on the next workflow of `CD Terraform` to run. Select `Branch: main` and choose `y` for the _Do you really want to proceed (y/n)?_ prompt. This will trigger Terraform init/plan/apply to run.
 ![gha-cd-tf-screenshot](https://github.com/user-attachments/assets/e938c533-9145-4c80-a814-0a9f6a615cee)
@@ -47,7 +47,7 @@ After the training dataset has been cleaned, reformmated, pre-processed and prep
 ![new-datasets-s3-bucket-screenshot](https://github.com/user-attachments/assets/a5da19c2-235a-48d6-a2c7-e22f3eec636e)
 Example datasets: [ml-datasets.zip](https://github.com/user-attachments/files/17989198/ml-datasets.zip) to unzip then upload.
 #### 3. Train the Model using Python with Scikit-Learn
-Now that the new datasets have been uploaded, we next proceed to the Training Stage of the ML Pipeline. The `train_model.yml` pipeline executes the ML model training job which also includes the steps for testing the model using the test dataset post-training as well as the first-time initialisation of the DVC tracking, version-controlling the trained ML model and the associated training dataset used, and scanning the model for vulnerabilities. It is located in the `.github/workflows` folder.
+Now that the new datasets have been uploaded, we next proceed to the Training Stage of the ML Pipeline. The `train_model.yml` pipeline executes the ML model training job which also includes the steps for testing the model using the test dataset post-training as well as the first-time initialisation of the DVC tracking, version-controlling the trained ML model and the associated training dataset used, and scanning the model for vulnerabilities using `protectai modelscan`. It is located in the `.github/workflows` folder.
 
 This `Train ML Model` workflow is triggered `on: push` to `branches: feature*` whenever any of `paths: main.py config.yml steps/*py requirements.txt trigger_test.py` changes. The latter `trigger_test.py` is a dummy Python program that can be changed with no impact whenever you wish to test-run this workflow. Alternatively this workflow may also be triggered by manually running in from the GitHub Actions menu tab.
 
@@ -57,7 +57,7 @@ Here's an illustration of the workflow summary screens:
 And the screenshot of the trained ML model binaries that are saved and version-controlled by DVC into the S3 bucket `DVC_artefacts` folder:
 ![s3-ml-model-artefacts-screenshot](https://github.com/user-attachments/assets/43bb3833-6170-4805-9564-7e853c46fb74)
 #### 4. Build the ML Application using FastAPI
-After the trained ML model is ready, the `build_app.yml` pipeline runs next to build the application Docker image, then scanning it for vulnerabilities using snyk container scan and publishing it to the private image registry of AWS ECR `ce7-grp-1/nonprod/predict_buy_app` repo. It is the last step of the Training Stage. This `Build Docker App Image` workflow is triggered `on: pull_request` of `types: closed` on `branches: feature*` whenever any of `paths: models/*.pkl.dvc` changes. Alternatively this workflow may also be triggered by manually running in from the GitHub Actions menu tab.
+After the trained ML model is ready, the `build_app.yml` pipeline runs next to build the application Docker image, then scanning it for vulnerabilities using `snyk container test` and publishing it to the private image registry of AWS ECR `ce7-grp-1/nonprod/predict_buy_app` repo. It is the last step of the Training Stage. This `Build Docker App Image` workflow is triggered `on: pull_request` of `types: closed` on `branches: feature*` whenever any of `paths: models/*.pkl.dvc` changes. Alternatively this workflow may also be triggered by manually running in from the GitHub Actions menu tab.
 
 The ML application of `predict_buy_app` is built using [FastAPI](https://fastapi.tiangolo.com/) with a Dockerfile that creates the application Docker image.
 >
@@ -86,7 +86,7 @@ Here's a screenshot of the registry repo `ce7-grp-1/nonprod/predict_buy_app` whe
 ![ecr-nonprod-repo-screenshot](https://github.com/user-attachments/assets/87df773d-a8b2-4411-9855-3d8f640341a9)
 Note that after this `Build Docker App Image` workflow completes, a manual Pull Request has to be created for code review and upon approval merges the Feature branch into the Develop branch for automated SIT cycle to begin. 
 
-And when there's a merge Pull Request on either the Feature or Develop branch, it will automatically run the CI checks on all the Python programs too - flake8 linting, black formatting, snyk code scanning.
+And when there's a merge Pull Request on either the Feature or Develop branch, it will automatically run the CI checks on all the Python programs too - `flake8` linting, `black` formatting, `snyk code test` scanning.
 #### 5. Promote the Application Docker Image from nonprod to prod ECR private registeries
 After the latest `predict_buy_app` version has successfully completed the SIT cycle, a manual Pull Request has to be created for code review and upon approval, merges the codes from the Develop branch to the Main branch. This will automatically trigger the `Promote Tested App Image` workflow to run `on: pull_request` of `types: closed` for `branches: main` whenever any of `paths: models/*.pkl.dvc app.py requirements.txt dockerfile trigger_test.py` changes.
 
