@@ -23,8 +23,8 @@ And as well as making sure to set up and configure the following:
   - Actions under General
       - Select the permissions `Allow all actions and reusable workflows`, `Require approval for all external contributors` and `Read and write permissions` and leave the other parameters unselected or as defaulted.
 ### 2. First-time infra resource creation of the AWS S3 bucket and ECR private repos
-For the first-time deployment, you will need to create a S3 bucket and the 2 ECR private repos. Click on `Actions` menu tab and you will see the following screen of the available GitHub Actions workflows:
-![gha-ci-tf-screenshot](https://github.com/user-attachments/assets/b5fe8dff-de6d-4246-80d9-e75b7eb91a8f)
+For the first-time deployment, you will need to create a S3 bucket and the 2 ECR private repos. Click on `Actions` menu tab and you will see the following screen of the available GitHub Actions workflows of the left-hand side panel:
+![gha-ci-tf-screenshot](https://github.com/user-attachments/assets/c46beac4-b340-4d54-b576-c91bce557c29)
 Next click on `CI Terraform` followed by click on `Run workflow`, then select _Use workflow from_ `Branch: main` and finally clicking on the `Run workflow` button. This will trigger a series of Terraform initialising, linting, formatting and validating checks - tflint, checkov, terraform init/fmt/validate.
 After the `CI Terraform` workflow runs successfully, click on the next workflow of `CD Terraform` to run. Select `Branch: main` and choose `y` for the _Do you really want to proceed (y/n)?_ prompt.
 ![gha-cd-tf-screenshot](https://github.com/user-attachments/assets/e938c533-9145-4c80-a814-0a9f6a615cee)
