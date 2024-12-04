@@ -26,12 +26,13 @@ And as well as making sure to set up and configure the following:
 For the first-time deployment, you will need to create a S3 bucket and the 2 ECR private repos. Click on `Actions` menu tab and you will see the following screen of the available GitHub Actions workflows of the left-hand side panel:
 ![gha-ci-tf-screenshot](https://github.com/user-attachments/assets/c46beac4-b340-4d54-b576-c91bce557c29)
 Next click on `CI Terraform` followed by click on `Run workflow`, then select _Use workflow from_ `Branch: main` and finally clicking on the `Run workflow` button. This will trigger a series of Terraform initialising, linting, formatting and validating checks - tflint, checkov, terraform init/fmt/validate.
-After the `CI Terraform` workflow runs successfully, click on the next workflow of `CD Terraform` to run. Select `Branch: main` and choose `y` for the _Do you really want to proceed (y/n)?_ prompt.
+
+After the `CI Terraform` workflow runs successfully, click on the next workflow of `CD Terraform` to run. Select `Branch: main` and choose `y` for the _Do you really want to proceed (y/n)?_ prompt. This will trigger Terraform init/plan/apply to run.
 ![gha-cd-tf-screenshot](https://github.com/user-attachments/assets/e938c533-9145-4c80-a814-0a9f6a615cee)
-This will trigger the Terraform AWS resources creation of the S3 bucket and ECR private repos:
+This will create the AWS infra resources of the S3 bucket and ECR private repos:
   - S3 bucket `ce7-grp-1-bucket`
     - `new_ML_data` folder where the model training dataset (named as `train.csv`) and the model testing dataset (named as `test.csv`) are stored
-    - `DVC_Artefacts` folder where the version control metadata of the trained ML models are saved by the [Data Version Control](https://dvc.org/) (DVC) tool that is used in the other workflows
+    - `DVC_Artefacts` folder where the version control metadata of the trained ML models and the associated training datasets used are saved using the [Data Version Control](https://dvc.org/) (DVC) tool that is used in the other workflows
 
 > Data Version Control (DVC) is an open-source version control system
 > for Data Science and Machine Learning projects. Git-like experience
