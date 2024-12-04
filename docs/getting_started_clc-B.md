@@ -13,7 +13,7 @@ The branching strategy adopted in this project is adapted from Trunk-based and G
 #### Main Branch
 The production branch is denoted as the Main branch. Only the `Promote Tested App Image` workflow runs here that will promote a (SIT) tested `predict_buy_app` from the Develop branch to the Main branch for production release.
 
-  ![develop-main-branch-cicd-diagram](https://github.com/user-attachments/assets/9970916c-9637-4738-abff-f8744ab7904a)
+  ![develop-main-branch-cicd-diagram](https://github.com/user-attachments/assets/09dbd4fb-3036-4dbf-9f59-ecad783cac22)
 #### Develop Branch
   ![feature-branch-cicd-diagram](https://github.com/user-attachments/assets/2037998a-c25a-4bb6-ac40-fff31ccd31ce)
 #### CICD Pipeline
