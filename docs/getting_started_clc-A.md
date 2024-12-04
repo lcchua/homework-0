@@ -1,4 +1,4 @@
-[Go to Part B](docs/getting_started_clc-B.md)
+[Go to Part B](getting_started_clc-B.md)
 
 ### ML Model Training & Publishing
 General a typical ML Pipeline has 3 workflow stages - Data Preparation, Model Training, Model Deployment, as depicted in the diagram below. 
@@ -132,4 +132,4 @@ docker run -d -p 80:80 predict_buy_app:latest
 ```
 Then you can proceed to test-run the application via Post or `curl` command as mentioned above but replacing the target location URL with that of your local or server host.
 
-[Go to Part B](docs/getting_started_clc-B.md)
+[Go to Part B](getting_started_clc-B.md)
