@@ -32,7 +32,7 @@ After the `CI Terraform` workflow runs successfully, click on the next workflow 
 This will create the AWS infra resources of the S3 bucket and ECR private repos:
   - S3 bucket `ce7-grp-1-bucket`
     - `new_ML_data` folder where the model training dataset (named as `train.csv`) and the model testing dataset (named as `test.csv`) are stored
-    - `DVC_Artefacts` folder where the version control metadata of the trained ML models and the associated training datasets used are saved using the [Data Version Control](https://dvc.org/) (DVC) tool that is used in the other workflows
+    - `DVC_Artefacts` folder where the version control metadata of the trained ML models and the associated training datasets used are saved using the [Data Version Control](https://dvc.org/) (DVC) tool.
 
 > Data Version Control (DVC) is an open-source version control system
 > for Data Science and Machine Learning projects. Git-like experience
