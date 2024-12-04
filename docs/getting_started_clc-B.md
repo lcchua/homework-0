@@ -30,5 +30,6 @@ The production branch is denoted as the Main branch. Only the `Promote Tested Ap
   ![py-snyk-scanning-screenshot](https://github.com/user-attachments/assets/35882bac-bae0-4fea-a292-2784a82fb9f7)
 #### Learning Journey
 _add what "little secrets" have been learnt that you like to share with others_ 
+
 <br>
 [Go to Part A](docs/getting_started_clc-B.md)
