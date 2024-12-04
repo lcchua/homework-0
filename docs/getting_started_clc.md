@@ -122,8 +122,11 @@ docker run -d -p 80:80 predict_buy_app:latest
 Then you can proceed to test-run the application via Post or `curl` command as mentioned above but replacing the target location URL with that of your local or server host.
 
 #### Dependencies
+The event trigger dependecies of the GitHub Actions workflows can be described as follows:
 ![MLOps CICD Plan](https://github.com/user-attachments/assets/bd768c7e-b205-4e3d-8f6f-431a1ec079d7)
-#### Application or Repo Structure
+For the ML Python environment dependencies, the following package libraries are required as listed in the `requirements.txt` file:
+![Screenshot 2024-12-04 at 2 26 03 PM](https://github.com/user-attachments/assets/632a7ba6-e8a6-4c51-b97f-520beebb2931)
+#### Project Repo Structure
 |![repo-structure-screenshot1](https://github.com/user-attachments/assets/0abb694f-9581-4e45-ab59-f02d45e77932)|
 ![repo-structure-screenshot2](https://github.com/user-attachments/assets/91e99fee-e5d6-4318-89e8-bb2028ec6c15) |
 #### Branching Strategies
