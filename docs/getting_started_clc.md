@@ -48,15 +48,18 @@ After the training dataset has been cleaned, reformmated, pre-processed and prep
 Example datasets: [ml-datasets.zip](https://github.com/user-attachments/files/17989198/ml-datasets.zip) to unzip then upload.
 #### 3. Train the Model using Python with Scikit-Learn
 Now that the new datasets have been uploaded, we next proceed to the Training Stage of the ML Pipeline. The `train_model.yml` pipeline executes the ML model training job which also includes the steps for testing the model using the test dataset post-training as well as the first-time initialisation of the DVC tracking, version-controlling the trained ML model and the associated training dataset used, and scanning the model for vulnerabilities. It is located in the `.github/workflows` folder.
+
 This `Train ML Model` workflow is triggered `on: push` to `branches: feature*` whenever any of `paths: main.py config.yml steps/*py requirements.txt trigger_test.py` changes. The latter `trigger_test.py` is a dummy Python program that can be changed with no impact whenever you wish to test-run this workflow. Alternatively this workflow may also be triggered by manually running in from the GitHub Actions menu tab.
+
 Here's an illustration of the workflow summary screens:
 ![train_model-workflow-summary-screenshot1](https://github.com/user-attachments/assets/1ac5ee58-2786-4ce2-9c6f-9caf0b9a9692)
 ![train_model-workflow-summary-screenshot2](https://github.com/user-attachments/assets/9780aaa1-6dfb-448e-a86d-50e36ab9fd9c)
 And the screenshot of the trained ML model binaries that are saved and version-controlled by DVC into the S3 bucket `DVC_artefacts` folder:
 ![s3-ml-model-artefacts-screenshot](https://github.com/user-attachments/assets/43bb3833-6170-4805-9564-7e853c46fb74)
 #### 4. Build the ML Application using FastAPI
-After the trained ML model is ready, the `build_app.yml` pipeline runs next to build the application Docker image, then scan it for vulnerabilities and publishing it to the image registry which in AWS ECR `ce7-grp-1/nonprod/predict_buy_app` repo. This is the last step of the Training Stage. This `Build Docker App Image` workflow is triggered `on: pull_request` of `types: closed` on `branches: feature*` whenever any of `paths: models/*.pkl.dvc` changes. Alternatively this workflow may also be triggered by manually running in from the GitHub Actions menu tab.
-The ML application of `predict_buy_app` is built using [FastAPI](https://fastapi.tiangolo.com/) and a Dockerfile that builds the application Docker image.
+After the trained ML model is ready, the `build_app.yml` pipeline runs next to build the application Docker image, then scanning it for vulnerabilities and publishing it to the private image registry of AWS ECR `ce7-grp-1/nonprod/predict_buy_app` repo. It is the last step of the Training Stage. This `Build Docker App Image` workflow is triggered `on: pull_request` of `types: closed` on `branches: feature*` whenever any of `paths: models/*.pkl.dvc` changes. Alternatively this workflow may also be triggered by manually running in from the GitHub Actions menu tab.
+
+The ML application of `predict_buy_app` is built using [FastAPI](https://fastapi.tiangolo.com/) with a Dockerfile that creates the application Docker image.
 >
 > FastAPI is a modern, fast (high-performance), web framework for building APIs with Python based on standard Python type hints.
 >
@@ -76,7 +79,7 @@ The ML application of `predict_buy_app` is built using [FastAPI](https://fastapi
 Here's an illustration of the workflow summary screens:
 ![build_app-workflow-summary-screenshot1](https://github.com/user-attachments/assets/139348d1-39a1-4c37-a4c0-5babcb42fb60)
 ![build_app-workflow-summary-screenshot2](https://github.com/user-attachments/assets/c2d486c7-0dfe-4c1f-bc4c-bcf0c1534bd1)
-After the Docker image is built, it is tagged with the next release version number as well as being tagged as `:latest`, before pushing it into the ECR nonprod repo `ce7-grp-1/nonprod/predict_buy_app`. We are basing on [SemVer](https://semver.org/) for our release versioning notation.
+After the Docker image is built, it is tagged with the next release version number as well as being tagged as `:latest`, before pushing it into the ECR nonprod repo `ce7-grp-1/nonprod/predict_buy_app`. We are basing on [SemVer](https://semver.org/) for our release versioning notation of <major_no>.<minor_no>.<patch_no>.
 ![github-rel-tagging-screenshot1](https://github.com/user-attachments/assets/1b29d29a-31b4-408b-be8d-428fe57a1828)
 ![github-rel-tagging-screenshot2](https://github.com/user-attachments/assets/2e004865-7d54-411f-bdb3-eaf58af63933)
 Here's a screenshot of the registry repo `ce7-grp-1/nonprod/predict_buy_app` where all the `predict_buy_app` Docker images are pushed to: 
