@@ -35,7 +35,7 @@ The CICD pipeline workflows spanning between the Develop and Main branches is il
   ![py-snyk-scanning-screenshot](https://github.com/user-attachments/assets/35882bac-bae0-4fea-a292-2784a82fb9f7)
 #### Learning Journey
 Some of the "little secrets" uncovered uin implementing this part of the MLOps Project are:
-  - workflow_run event trigger of GitHub Actions workflows
+  - `workflow_run` event trigger of GitHub Actions workflows
 
     Originally, we wanted to make use of the event trigger of `on: workflow_run workflows: ["Train ML Model"] types: completed branches: feature*` for the `build_app` workflow, however we came to realize that:
     
@@ -43,5 +43,11 @@ Some of the "little secrets" uncovered uin implementing this part of the MLOps P
       > ![gha-workflow_run_event_notes](https://github.com/user-attachments/assets/b3142eb2-30cd-444d-8156-d13dcd633d52)
 
     So at the end, we decided switching to using the workflow event trigger of `on: pull_request` though it was possible to use `on: workflow_call`.
+
+  - As the process of the developing the project's MLOPs CICD workflow files, it is much easier to code, test and debug each workflow job execution script files without using GitHub Actions first. Especially where appopriate without for Bash shell scripting. Only until the execution scripts are tested working properly then we transfer them into GitHub Actions `.yml files` where we next test on the workflow automated orchestration steps in the GitHub cloud. For this reason, a `Makefile` has been created to make this local development of the CICD workflow script files easier. 
+
+    ![mlops_makefile-screenshot](https://github.com/user-attachments/assets/ca114246-8336-46ac-9bbd-e0fd23537402)
+
+    For example, to help with installing and setting up the Python environment for machine learning and ata science analytics starting from scratch, run `make setup_vv`, `make setup_py` followed by `make setup_dvc`. Or to start the ML model training or post-training testing, run `make train` or `make test`. And to clean up the model training environment fo restart, run `make cleanup`, or to reset the local development environment back to scratch prior to the installation and setup, run `make remove`. Do make sure that the Git repo has been cloned as mentioned in the Getting Started section of this README document beforehand otherwise the `Makefile` does not work.
 
 [Go back Part A](getting_started_clc-A.md)
