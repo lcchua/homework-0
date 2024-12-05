@@ -180,5 +180,17 @@ sum(rate(prometheus_http_request_duration_seconds_count{namespace="monitoring",j
 ![image](https://github.com/user-attachments/assets/f7134e64-1ba7-4981-9b7e-6c1b34601418)
 
 #### Learning Journey
-_add what "little secrets" have been learnt that you like to share with others_ 
+
+**Understanding Metrics**
+- To create useful dashboards, I need to understand what the metrics mean, how they are calculated, and how they impact system health.
+For example, knowing the 4 Golden Signals (saturation, traffic, errors, and latency) helps to create meaningful queries and good visualizations.
+Mathematical Insight:
+
+- It is important to understand the formulas behind metrics like request duration or CPU usage to properly analyze system behavior. However, this can be difficult, and there aren’t many helpful resources online.
+
+**Using Different Tools**
+- Prometheus, Grafana, and Loki work together to provide full system visibility, making it important to use them together for better monitoring.
+
+**Team Collaboration**
+- Working with the team is key. Without my team mate help, I wouldn’t have been able to get started. 
 
