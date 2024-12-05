@@ -6,14 +6,18 @@ This repository contains the setup and configuration for Prometheus and Grafana 
 
 #### **Installation** 
 1. Ensure **Helm** is installed. If not, install Helm following the instructions [here](https://helm.sh/docs/intro/install/)
-2. Install Prometheus from the official Prometheus Helm chart:
+2. Install Prometheus Helm chart:
 ```bash
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo update
 helm install prometheus prometheus-community/prometheus
-
 ```
-
+3. Install Grafana Helm Chart:
+```bash
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+helm install grafana grafana/grafana
+```
 #### Application or Repo Structure
 _describe the application or repo structure if any_
 #### Branching Strategies
