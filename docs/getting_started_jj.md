@@ -4,8 +4,17 @@ This repository contains the setup and configuration for Prometheus and Grafana 
 ![image](https://github.com/user-attachments/assets/cdead711-a757-4277-8c0d-1714588aae81)
 
 
-#### Dependencies
-_fill in the dependencies if any_
+#### **Installation** 
+1. Ensure **Helm** is installed. If not, install Helm following the instructions [here](https://helm.sh/docs/intro/install/)
+2. Install Prometheus from the official Prometheus Helm chart:
+   ```bash
+# Add Prometheus Helm repo
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+
+# Install Prometheus
+helm install prometheus prometheus-community/prometheus
+- You must have a running Kubernetes cluster.
 #### Application or Repo Structure
 _describe the application or repo structure if any_
 #### Branching Strategies
