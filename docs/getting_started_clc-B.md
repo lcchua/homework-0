@@ -33,6 +33,11 @@ The CICD pipeline workflows spanning between the Develop and Main branches is il
   ![py-black-formatting-screenshot](https://github.com/user-attachments/assets/7029a197-654c-40e0-bc67-f16f1c72fbd3)
   ![py-snyk-scanning-screenshot](https://github.com/user-attachments/assets/35882bac-bae0-4fea-a292-2784a82fb9f7)
 #### Learning Journey
-_add what "little secrets" have been learnt that you like to share with others_ 
+Some of the "little secrets" uncovered uin implementing this part of the MLOps Project are:
+  - workflow_run event trigger of GitHub Actions workflows
+      ![gha-workflow_run_event_notes](https://github.com/user-attachments/assets/b3142eb2-30cd-444d-8156-d13dcd633d52)
+  - Terraform documentation auto-generation<br>
+    [terraform-docs](https://terraform-docs.io)
+  - 
 
 [Go back Part A](getting_started_clc-A.md)
