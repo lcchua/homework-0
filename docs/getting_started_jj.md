@@ -3,6 +3,12 @@ This repository contains the setup and configuration for Prometheus and Grafana 
 
 ![image](https://github.com/user-attachments/assets/cdead711-a757-4277-8c0d-1714588aae81)
 
+#### Dependencies
+This repository requires the following dependencies to be set up:
+- Prometheus for metrics collection and monitoring.
+- Grafana for data visualization and dashboard creation.
+- Node Exporter for system-level metrics (CPU, memory, disk, network, file system).
+- Loki (for log aggregation and query in Grafana).
 
 #### **Installation** 
 1. Ensure **Helm** is installed. If not, install Helm following the instructions [here](https://helm.sh/docs/intro/install/)
@@ -18,6 +24,14 @@ helm repo add grafana https://grafana.github.io/helm-charts
 helm repo update
 helm install grafana grafana/grafana
 ```
+4. Install Loki stack for log aggregation:
+```bash
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+helm install loki grafana/loki-stack
+```
+
+
 #### Application or Repo Structure
 _describe the application or repo structure if any_
 #### Branching Strategies
