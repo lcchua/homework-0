@@ -1,9 +1,7 @@
 ### Prometheus & Grafana SRE Monitoring Tools
 This repository contains the setup and configuration for Prometheus and Grafana monitoring tools, designed to monitor and visualize the key performance signals for system and application health. The monitoring setup adheres to SRE best practices, specifically focusing on the SRE 4 Golden Signals: 
-- **Latency**
-- **Traffic**
-- **Errors**
-- **Saturation**
+![image](https://github.com/user-attachments/assets/cdead711-a757-4277-8c0d-1714588aae81)
+
 
 #### Dependencies
 _fill in the dependencies if any_
