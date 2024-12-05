@@ -59,14 +59,14 @@ Home
 
 ![image](https://github.com/user-attachments/assets/68679692-e380-4551-9816-746f1efb827c)
 
-**_Add Prometheus as a Data Source:_**
+  **_Add Prometheus as a Data Source:_**
 - In the Grafana dashboard, click on the gear icon (⚙️) on the left sidebar to go to **Configuration**
 - Under **Data Sources**, click **Add data source**
 - Select **Prometheus** from the list of data sources.
 - In the URL field, enter the URL of your Prometheus instance (e.g., http://localhost:9090).
 - Click **Save & Test** to ensure the data source is connected.
 
-_**Add Loki as a Data Source:**_
+  _**Add Loki as a Data Source:**_
 - Under **Configuration**, click **Add data source** again.
 - Select **Loki **from the list of data sources.
 - In the **URL** field, enter the URL of the Loki instance (e.g., http://localhost:3100).
@@ -109,15 +109,19 @@ Saturation measures the system's capacity and how full the resources are (CPU, m
 
 _**•	CPU Utilisation**_
 The query calculates the CPU usage percentage by subtracting the idle CPU time (as a percentage) from 100, using the irate function to measure the rate of change of idle time over the last 5 minutes.
+- Data Source: Prometheus
 ```bash  100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) ```
 
 _**•	Memory Utilisation**_
-This query calculates the percentage of used memory by subtracting available memory from total memory and then dividing by the total memory, multiplied by 100.
+- This query calculates the percentage of used memory by subtracting available memory from total memory and then dividing by the total memory, multiplied by 100.
+- Data Source: Prometheus
 ```bash  (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100```
 
-•	Disk Saturation
-```bash  ```
-
+•	**Disk Saturation**
+- This command counts the occurrences of logs with "statusCode=4" (Client side error) and "statusCode=5" (Server side error) in the "monitoring" namespace over the past 5 minutes.
+- Data Source: Loki
+```bash count_over_time({namespace="monitoring"} |= "statusCode=4" [5m]) ```
+```bash count_over_time({namespace="monitoring"} |= "statusCode=5" [5m]) ```
 
 
 
