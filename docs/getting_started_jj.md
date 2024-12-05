@@ -113,21 +113,21 @@ b) Queuing delays for processes.
 c) Application timeouts.
 
 - Data Source: Prometheus
-- ```bash  100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) ```
+- ```100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) ```
 
 _**•	Memory Utilisation**_
 - This query calculates the percentage of used memory by subtracting available memory from total memory and then dividing by the total memory, multiplied by 100. Similar to CPU Utilisation, anything above Above 85% utilization often indicates the memory is nearing saturation.
   
 - Data Source: Prometheus
-- ```bash  (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100```
+- ```(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100```
 
 •	**Disk Saturation**
 
 - High disk read/write activity might indicate heavy workloads or bottlenecks.
 - This command counts the occurrences of logs with "statusCode=4" (Client side error) and "statusCode=5" (Server side error) in the "monitoring" namespace over the past 5 minutes.
 - Data Source: Loki
-- ```bash count_over_time({namespace="monitoring"} |= "statusCode=4" [5m]) ```
-- ```bash count_over_time({namespace="monitoring"} |= "statusCode=5" [5m]) ```
+- ```count_over_time({namespace="monitoring"} |= "statusCode=4" [5m]) ```
+- ```count_over_time({namespace="monitoring"} |= "statusCode=5" [5m]) ```
 
 •	_**2. Traffic (Request Volume)**_
 - Traffic measures the load on the system, whether it is operating within expected capacity. This is vital for understanding demand and identifying potential overloading.
@@ -137,7 +137,7 @@ _**•	Memory Utilisation**_
 - This command calculates the rate of network bytes received over the last 5 minutes.
 - Sudden spikes in incoming or outgoing traffic may signify potential attacks or high usage.
 - Data Source: Prometheus
-- ```bash  rate(node_network_receive_bytes_total[5m])```
+- ```rate(node_network_receive_bytes_total[5m])```
 
 #### Production Branch
 _describe the branch actions for prod env if any_
