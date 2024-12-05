@@ -42,8 +42,5 @@ Some of the "little secrets" uncovered uin implementing this part of the MLOps P
       > ![gha-workflow_run_event_notes](https://github.com/user-attachments/assets/b3142eb2-30cd-444d-8156-d13dcd633d52)
 
     So at the end, we decided switching to using the workflow event trigger of `on: pull_request` though it was possible to use `on: workflow_call`.
-  - Terraform documentation auto-generation<br>
-    [terraform-docs](https://terraform-docs.io)
-  - 
 
 [Go back Part A](getting_started_clc-A.md)
