@@ -122,22 +122,25 @@ _**•	Memory Utilisation**_
 - ```(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100```
 
 •	**Disk Saturation**
-
 - High disk read/write activity might indicate heavy workloads or bottlenecks.
-- This command counts the occurrences of logs with "statusCode=4" (Client side error) and "statusCode=5" (Server side error) in the "monitoring" namespace over the past 5 minutes.
-- Data Source: Loki
-- ```count_over_time({namespace="monitoring"} |= "statusCode=4" [5m]) ```
-- ```count_over_time({namespace="monitoring"} |= "statusCode=5" [5m]) ```
+- This This query calculates the rate of disk read and write bytes over the last 5 minutes.
+- Data Source: Promethues
+- ```rate(node_disk_read_bytes_total[5m])```
 
 •	_**2. Traffic (Request Volume)**_
 - Traffic measures the load on the system, whether it is operating within expected capacity. This is vital for understanding demand and identifying potential overloading.
 
 
-•	**Network Throughput (Incoming Traffic)**
+•	**Network Throughput (Incoming and Outgoing Traffic)**
 - This command calculates the rate of network bytes received over the last 5 minutes.
 - Sudden spikes in incoming or outgoing traffic may signify potential attacks or high usage.
 - Data Source: Prometheus
-- ```rate(node_network_receive_bytes_total[5m])```
+- Incoming ```rate(node_network_transmit_bytes_total[5m])```
+- Outgoing ```rate(node_network_transmit_bytes_total[5m])```
+
+
+
+
 
 #### Production Branch
 _describe the branch actions for prod env if any_
