@@ -115,17 +115,23 @@ c) Application timeouts.
 - Data Source: Prometheus
 - ```100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) ```
 
+![image](https://github.com/user-attachments/assets/cd62a32d-daf1-4e3b-a42b-6ad3cdee6de2)
+
 _**•	Memory Utilisation**_
 - This query calculates the percentage of used memory by subtracting available memory from total memory and then dividing by the total memory, multiplied by 100. Similar to CPU Utilisation, anything above Above 85% utilization often indicates the memory is nearing saturation.
   
 - Data Source: Prometheus
 - ```(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100```
 
+![image](https://github.com/user-attachments/assets/57462672-7c87-41ad-9948-8d92532fed43)
+
 •	**Disk Saturation**
 - High disk read/write activity might indicate heavy workloads or bottlenecks.
 - This This query calculates the rate of disk read and write bytes over the last 5 minutes.
 - Data Source: Promethues
 - ```rate(node_disk_read_bytes_total[5m])```
+
+![image](https://github.com/user-attachments/assets/27b3bc1b-a4b2-408a-8051-8be11c7706f0)
 
 •	_**2. Traffic (Request Volume)**_
 - Traffic measures the load on the system, whether it is operating within expected capacity. This is vital for understanding demand and identifying potential overloading.
@@ -138,16 +144,41 @@ _**•	Memory Utilisation**_
 - Incoming ```rate(node_network_transmit_bytes_total[5m])```
 - Outgoing ```rate(node_network_transmit_bytes_total[5m])```
 
+![image](https://github.com/user-attachments/assets/87d58c4d-63d7-44d8-9e58-e50f7ebedc9e)
 
+•	_**3. Error (Request Volume)**
+- Tracks the rate or number of times requests to application fails.
 
+•	**HTTP Error (4xx - Client) (5xx - Server)**
+- This query counts occurrences of "statusCode=4" (Client Error) and "statusCode=5" (Server Error) in the "monitoring" namespace over the last 5 minutes.
+- High error count can point to client issues (4xx)
+- Data Source: Loki
+-  ``` count_over_time({namespace="monitoring"} |= "statusCode=4" [5m])```
+-  ``` count_over_time({namespace="monitoring"} |= "statusCode=5" [5m])```
 
+![image](https://github.com/user-attachments/assets/a5fd29a3-01b2-4550-a47b-cdc43f5ea22f)
 
-#### Production Branch
-_describe the branch actions for prod env if any_
-#### Non-Production Branch
-_describe the branch actions for nonprod env if any_
-#### CICD Pipeline
-_describe the pipeline workflow including output samples if any_
+•	**Logs for HTTP Error (4xx - Client) (5xx - Server)**
+- This query provides the logs for review.
+- Data Source: Loki
+-  ``` {namespace="monitoring"} |~ "statusCode=(4[0-9]{2})"``` 
+-  ``` {namespace="monitoring"} |~ "statusCode=(5[0-9]{2})"```
+
+![image](https://github.com/user-attachments/assets/b7ca27f1-0b4a-43a8-842d-0909401570cc)
+
+•	_**4. Latency**
+-  Latency measures the time it takes for a request or transaction to complete. This is important for both system and application performance.
+
+•	**HTTP Response Latency**
+- This query calculates the average HTTP request duration for the Prometheus job ce7-grp-1-prome-kube-prome-prometheus in the "monitoring" namespace over the last 5 minutes.
+- Ideally we want this to be constant (i.e. flat).Increased latency indicates potential application or backend bottlenecks
+- Data Source: Prometheus
+-  ```sum(rate(prometheus_http_request_duration_seconds_sum{namespace="monitoring", job="ce7-grp-1-prome-kube-prome-prometheus"}[5m]))
+/
+sum(rate(prometheus_http_request_duration_seconds_count{namespace="monitoring",job="ce7-grp-1-prome-kube-prome-prometheus"}[5m]))```
+
+![image](https://github.com/user-attachments/assets/f7134e64-1ba7-4981-9b7e-6c1b34601418)
+
 #### Learning Journey
 _add what "little secrets" have been learnt that you like to share with others_ 
 
