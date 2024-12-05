@@ -38,10 +38,11 @@ In this project, Grafana, Prometheus, and Loki were initially installed on a loc
 To create a dashboard on Grafana localhost from scratch. Follow these steps:
 
 1. Access Grafana
-Open your browser and go to Grafana’s web interface, typically available at '''bash
+Open your browser and go to Grafana’s web interface, typically available at
+'''bash
 http://localhost:3000
 '''
-2. The default login credentials are:
+3. The default login credentials are:
 
 Username: '''bash admin '''
 Password: '''bash admin (or prom-operator)'''
