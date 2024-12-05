@@ -83,9 +83,20 @@ Enter a name for the dashboard and click "Save" to store the dashboard configura
 ![image](https://github.com/user-attachments/assets/f68eed71-aba6-4cae-9312-38335116d2ea)
 
 6. Download the JSON File:
-- To download the dashboard as a JSON file, click the "Share" button at the top of the dashboard.
-- In the window that appears, select the "Export" tab and click the "Download JSON" button.
-- This will download the dashboard’s configuration as a JSON file to your local machine.
+- To download the dashboard as a JSON file, click the **"Share" **button at the top of the dashboard.
+![image](https://github.com/user-attachments/assets/3b202ffc-a59e-4ba1-8178-6ee1494a11d3)
+
+- In the window that appears, select the **"Export"** tab and click the **"Save to file"** button.
+![image](https://github.com/user-attachments/assets/32407c62-697d-4936-89b8-a57c6ad1128a)
+
+- This will download the dashboard’s configuration as a JSON file to your computer.
+
+7. Uploading the JSON File to EKS Cluster
+- Once the EKS cluster is ready, the saved JSON file is imported to the EKS's grafana with configuration.
+- Navigate to the Grafana dashboard running on the EKS cluster. If access is via Load Balancer, open the Grafana URL in the browser.
+- In the Grafana UI, click the "+" icon on the left sidebar and select "Import".
+- In the "Import Dashboard" section, click the "Upload JSON file" button.
+- Browse to the location where you downloaded the JSON file and select it.
 
 #### Branching Strategies
 _describe the branching strategy if any_
