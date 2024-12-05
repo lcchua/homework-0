@@ -5,7 +5,8 @@ This repository contains the setup and configuration for Prometheus and Grafana 
 
 <details>
 
-<summary> #### Dependencies
+<summary> 
+**Dependencies**
 This repository requires the following dependencies to be set up:
 - Prometheus for metrics collection and monitoring.
 - Grafana for data visualization and dashboard creation.
