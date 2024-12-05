@@ -102,29 +102,42 @@ Enter a name for the dashboard and click "Save" to store the dashboard configura
 #### Reliability Engineering (SRE)
 This section breaks down the key metrics based on the SRE 4 Golden Signals framework. These signals help monitor the system health and performance.
 
-_**Saturation (Resource Utilisation)**_
+**Key Metrics:**
+_**1. Saturation (Resource Utilisation)**_
 Saturation measures the system's capacity and how full the resources are (CPU, memory, disk, etc.)
 
-**Key Metrics:**
-
 _**•	CPU Utilisation**_
-The query calculates the CPU usage percentage by subtracting the idle CPU time (as a percentage) from 100, using the irate function to measure the rate of change of idle time over the last 5 minutes.
+The query calculates the CPU usage percentage by subtracting the idle CPU time (as a percentage) from 100, using the irate function to measure the rate of change of idle time over the last 5 minutes. If utilisation is above 85% utilization often indicates the CPU is nearing saturation and may cause: 
+a) Slow response times.
+b) Queuing delays for processes.
+c) Application timeouts.
+
 - Data Source: Prometheus
-```bash  100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) ```
+- ```bash  100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) ```
 
 _**•	Memory Utilisation**_
-- This query calculates the percentage of used memory by subtracting available memory from total memory and then dividing by the total memory, multiplied by 100.
+- This query calculates the percentage of used memory by subtracting available memory from total memory and then dividing by the total memory, multiplied by 100. Similar to CPU Utilisation, anything above Above 85% utilization often indicates the memory is nearing saturation.
+  
 - Data Source: Prometheus
-```bash  (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100```
+- ```bash  (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100```
 
 •	**Disk Saturation**
+
+- High disk read/write activity might indicate heavy workloads or bottlenecks.
 - This command counts the occurrences of logs with "statusCode=4" (Client side error) and "statusCode=5" (Server side error) in the "monitoring" namespace over the past 5 minutes.
 - Data Source: Loki
-```bash count_over_time({namespace="monitoring"} |= "statusCode=4" [5m]) ```
-```bash count_over_time({namespace="monitoring"} |= "statusCode=5" [5m]) ```
+- ```bash count_over_time({namespace="monitoring"} |= "statusCode=4" [5m]) ```
+- ```bash count_over_time({namespace="monitoring"} |= "statusCode=5" [5m]) ```
+
+•	_**2. Traffic (Request Volume)**_
+- Traffic measures the load on the system, whether it is operating within expected capacity. This is vital for understanding demand and identifying potential overloading.
 
 
-
+•	**Network Throughput (Incoming Traffic)**
+- This command calculates the rate of network bytes received over the last 5 minutes.
+- Sudden spikes in incoming or outgoing traffic may signify potential attacks or high usage.
+- Data Source: Prometheus
+- ```bash  rate(node_network_receive_bytes_total[5m])```
 
 #### Production Branch
 _describe the branch actions for prod env if any_
@@ -135,4 +148,3 @@ _describe the pipeline workflow including output samples if any_
 #### Learning Journey
 _add what "little secrets" have been learnt that you like to share with others_ 
 
-</details>
