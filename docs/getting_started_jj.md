@@ -32,8 +32,39 @@ helm install loki grafana/loki-stack
 ```
 
 
-#### Application or Repo Structure
-_describe the application or repo structure if any_
+#### Creating a Grafana Dashboard from Scratch and Linking Data Sources
+In this project, Grafana, Prometheus, and Loki were initially installed on a local machine while awaiting the finalisation of the workflow for the capstone project's EKS cluster. A custom Grafana dashboard was created for set up and testing purposes. Once the group's capstone EKS cluster was ready, the dashboard configuration was saved as a JSON file and uploaded to the cluster.
+
+To create a dashboard on Grafana localhost from scratch. Follow these steps:
+
+1. Access Grafana
+Open your browser and go to Grafana’s web interface, typically available at '''bash
+http://localhost:3000
+'''
+2. The default login credentials are:
+
+Username: '''bash admin '''
+Password: '''bash admin (or prom-operator)'''
+
+
+3. Add Prometheus and Loki Data Sources
+Before creating the dashboard, ensure that Prometheus and Loki are added as data sources:
+
+Add Prometheus as a Data Source:
+
+In the Grafana dashboard, click on the gear icon (⚙️) in the left sidebar to go to Configuration.
+Under Data Sources, click Add data source.
+Select Prometheus from the list of data sources.
+In the URL field, enter the URL of your Prometheus instance (e.g., http://prometheus-server:9090).
+Click Save & Test to ensure the data source is connected.
+
+Add Loki as a Data Source:
+
+Under Configuration, click Add data source again.
+Select Loki from the list of data sources.
+In the URL field, enter the URL of your Loki instance (e.g., http://loki:3100).
+Click Save & Test to ensure the data source is connected.
+
 #### Branching Strategies
 _describe the branching strategy if any_
 #### Production Branch
