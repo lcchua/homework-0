@@ -98,11 +98,11 @@ After the Docker image is built, it is tagged with the next release version numb
   ![github-rel-tagging-screenshot2](https://github.com/user-attachments/assets/2e004865-7d54-411f-bdb3-eaf58af63933)
 Here's a screenshot of the registry repo `ce7-grp-1/nonprod/predict_buy_app` where all the `predict_buy_app` Docker images are pushed to: 
   ![ecr-nonprod-repo-screenshot](https://github.com/user-attachments/assets/87df773d-a8b2-4411-9855-3d8f640341a9)
-Note that after this `Build Docker App Image` workflow completes, a manual Pull Request has to be created for code review and upon approval merges the Feature branch into the Develop branch for automated SIT cycle to begin. 
+Note that after this `Build Docker App Image` workflow completes, a manual Pull Request has to be created for code review and upon approval merges the Feature branch into the Develop branch for automated testing cycle to begin. 
 
 And when there's a merge Pull Request on either the Feature or Develop branch, it will automatically run the CI checks on all the Python programs too - `flake8` linting, `black` formatting, `snyk code test` scanning.
 #### 5. Promote the Application Docker Image from nonprod to prod ECR private registeries
-After the latest `predict_buy_app` version has successfully completed the SIT cycle, a manual Pull Request has to be created for code review and upon approval, merges the Develop branch with the Main branch. This will automatically trigger the `Promote Tested App Image` workflow to run on the event of `on: pull_request types: closed branches: main paths: models/*.pkl.dvc app.py requirements.txt dockerfile trigger_test.py` whenever the ML model `.pkl file` or the  FastAPI app codes change.
+After the latest `predict_buy_app` version has successfully completed the testing cycle, a manual Pull Request has to be created for code review and upon approval, merges the Develop branch with the Main branch. This will automatically trigger the `Promote Tested App Image` workflow to run on the event of `on: pull_request types: closed branches: main paths: models/*.pkl.dvc app.py requirements.txt dockerfile trigger_test.py` whenever the ML model `.pkl file` or the  FastAPI app codes change.
 
 Here's an illustration of the workflow summary screen:
   ![promote_app-workflow-summary-screenshot1](https://github.com/user-attachments/assets/ae6c75c7-654b-418f-bfca-74351e59f1ea)
