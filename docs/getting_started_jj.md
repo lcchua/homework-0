@@ -3,10 +3,8 @@ This repository contains the setup and configuration for Prometheus and Grafana 
 
 ![image](https://github.com/user-attachments/assets/cdead711-a757-4277-8c0d-1714588aae81)
 
-<details>
 
-<summary> 
-**Dependencies**
+#### **Dependencies** 
 This repository requires the following dependencies to be set up:
 - Prometheus for metrics collection and monitoring.
 - Grafana for data visualization and dashboard creation.
