@@ -19,10 +19,11 @@ The production branch is denoted as the Main branch. Only the `Promote Tested Ap
 
 The CICD pipeline workflows spanning between the Develop and Main branches is illustrated as follows:
 
-  ![develop-main-branch-cicd-diagram](https://github.com/user-attachments/assets/99d7f606-191f-42c9-bb38-af7311674e8f)
+  ![develop-main-branch-cicd-diagramjScope-Page-6](https://github.com/user-attachments/assets/4c8a7b58-8d6d-4f84-a312-1e3667aed192)
 #### CICD Pipeline
-  ![ci_tf_workflow-screenshot](https://github.com/user-attachments/assets/a1904669-5a34-4980-8422-8ac46a0dc56c)
-  ![ci_tf_checkov_output-screenshot](https://github.com/user-attachments/assets/72ee43d8-4819-4dff-b356-e53c73480062)
+  ![ci_tf_workflow-screenshot1](https://github.com/user-attachments/assets/a1904669-5a34-4980-8422-8ac46a0dc56c)
+  ![ci_tf_workflow-screenshot2](https://github.com/user-attachments/assets/b174effe-d68e-4979-b6b5-5941dbc7f2a4)
+  ![ci_tf_workflow-screenshot3](https://github.com/user-attachments/assets/f7d7e01c-16f1-407c-a292-256290ef7721)
   ![cd_tf_workflow-screenshot1](https://github.com/user-attachments/assets/0409d9a6-c6f8-42e1-a26f-34e30578fdd8)
   ![cd_tf_workflow_screenshot2](https://github.com/user-attachments/assets/a3a422cb-ab5a-41cd-9ca8-8b6c8dbb2e39)
   ![train_model-workflow-summary-screenshot2](https://github.com/user-attachments/assets/9780aaa1-6dfb-448e-a86d-50e36ab9fd9c)
