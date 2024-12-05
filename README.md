@@ -69,4 +69,4 @@ Credits to the 'hardcore' team:
 
 ## Additional Resources if any
 1. [Machine Learning Operations (MLOps) For Beginners](https://medium.com/@prasadmahamulkar/machine-learning-operations-mlops-for-beginners-a5686bfe02b2)
-2. 
+2. [GitHub repo for MLOps For Beginners](https://github.com/prsdm/mlops-project)
