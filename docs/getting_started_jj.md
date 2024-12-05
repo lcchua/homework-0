@@ -43,8 +43,8 @@ Open your browser and go to Grafana’s web interface, typically available at
 
 3. The default login credentials are:
 
-Username: ```bash admin```
-Password: ```bash admin (or prom-operator)```
+- Username: ```bash admin```
+- Password: ```bash admin (or prom-operator)```
 
 
 3. Add Prometheus and Loki Data Sources
