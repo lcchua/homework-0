@@ -1,5 +1,5 @@
 ### Prometheus & Grafana SRE Monitoring Tools
-This repository contains the setup and configuration for Prometheus and Grafana monitoring tools, designed to monitor and visualize the key performance signals for system and application health. The monitoring setup adheres to SRE best practices, specifically focusing on the SRE 4 Golden Signals: 
+This repository contains the setup and configuration for Prometheus and Grafana monitoring tools, designed to monitor and visualize the key performance signals for system and application health. The monitoring setup adheres to Site Reliability Engineering (SRE) best practices, specifically focusing on the SRE 4 Golden Signals: 
 
 ![image](https://github.com/user-attachments/assets/cdead711-a757-4277-8c0d-1714588aae81)
 
@@ -98,8 +98,29 @@ Enter a name for the dashboard and click "Save" to store the dashboard configura
 - In the "Import Dashboard" section, click the "Upload JSON file" button.
 - Browse to the location where you downloaded the JSON file and select it.
 
-#### Branching Strategies
-_describe the branching strategy if any_
+#### Reliability Engineering (SRE)
+This section breaks down the key metrics based on the SRE 4 Golden Signals framework. These signals help monitor the system health and performance.
+
+_**Saturation (Resource Utilisation)**_
+Saturation measures the system's capacity and how full the resources are (CPU, memory, disk, etc.)
+
+**Key Metrics:**
+
+_**•	CPU Utilisation**_
+The query calculates the CPU usage percentage by subtracting the idle CPU time (as a percentage) from 100, using the irate function to measure the rate of change of idle time over the last 5 minutes.
+```bash  100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) ```
+
+_**•	Memory Utilisation**_
+This query calculates the percentage of used memory by subtracting available memory from total memory and then dividing by the total memory, multiplied by 100.
+```bash  (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100```
+
+•	Disk Saturation
+```bash  ```
+
+
+
+
+
 #### Production Branch
 _describe the branch actions for prod env if any_
 #### Non-Production Branch
